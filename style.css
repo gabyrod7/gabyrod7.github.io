@@ -73,19 +73,21 @@ body {
 .left,
 .right {
   height: 100vh;
-  overflow-y: auto; /* independent scrollbars */
+  overflow-y: auto;
   box-sizing: border-box;
   /* padding: 1rem; */
 }
 
 .left {
-  flex: 0 0 25%;
+  /* flex: 0 0 25%; */
+  flex: 1 0 25%;
   border-right: 1px solid #ddd;
   box-shadow: 4px 0 8px -4px rgba(0, 0, 0, 0.1);
 }
 
 .right {
-  flex: 1;
+  /* flex: 1; */
+  flex: 1 1 auto;
 }
 
 .right h1 {
