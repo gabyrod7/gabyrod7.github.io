@@ -19,3 +19,11 @@ This is a protfolio page with a two column layout implements with HTML/CSS/JavaS
     <a href="https://gabyrod7.github.io" target="_blank"><img src="./assets/example/portfolio_example.png"></a>
   </kbd>
 </p>
+
+## Inspiration
+
+Some portfolio pages I used as inspiration
+1. <a href="https://github.com/varadbhogayata/varadbhogayata.github.io/tree/master" target="_blank">Github page by varadbhogayata</a>
+2. <a href="https://thinhdanggroup.github.io/" target="_blank">Thinh Dang</a>
+3. <a href="https://vinaysomawat.github.io/" target="_black">Github page by vinaysomawat</a>
+4. <a href="https://github.com/guilyx/awesome-github-pages-portfolios?tab=readme-ov-file" target="_blank">Github page with multiple protfolio examples</a>
