@@ -24,25 +24,29 @@
                 <button class="button" data-target="about">About</button>
                 <button class="button" data-target="education">Education</button>
                 <button class="button" data-target="experience">Experience</button>
-                <!-- <button class="button" data-target="projects">Projects</button> -->
+                <button class="button" data-target="projects">Projects</button>
                 <button class="button" data-target="conferences">Conferences</button>
                 <button class="button" data-target="publications">Publications</button>
                 <button class="button" data-target="teaching">Teaching</button>
                 <a href="assets/resume/resume.pdf" class="button" target="_blank" rel="noopener noreferrer">Resume</a>
             </div>
+            <!-- <div class="nav">
+                <a class="button" href="#about">About</a>
+                <a class="button" href="#education">Education</a>
+                <a class="button" href="#experience">Experience</a>
+                <a class="button" href="#projects">Projects</a>
+                <a class="button" href="#conferences">Conferences</a>
+                <a class="button" href="#publications">Publications</a>
+                <a class="button" href="#teaching">Teaching</a>
+                <a href="assets/resume/resume.pdf" class="button" target="_blank" rel="noopener noreferrer">Resume</a>
+            </div> -->
             </aside>
 
             <main class="right" id="right">
-            <!-- <h1>Page Title</h1> -->
 
             <section id="about">
                 <h1>About</h1>
                 <p>
-                    <!-- Welcome! I am Grabriel Rodríguez Linera, a physicists and data analyst with a 
-                    passion for takling challenging topics. In 2025, I completed my PhD in hadron physics
-                    where I mainly focused on studying how pairs of neutral Kaons are producted when a high
-                    energy (8 GeV) photon beam interacts with a proton. The research I carried out as a 
-                    grad student  -->
                     I completed my Ph.D. in Physics in 2024, where I investigated fundamental particle interactions 
                     using large-scale experimental data. My research involved analyzing data sets of several terabytes
                     in size to study complex physics reactions, complemented by extensive Monte Carlo simulations to 
@@ -78,55 +82,64 @@
             <h1>Education</h1>
 
             <h2>University</h2>
-            <ul>
-                <li>
-                <strong>Doctor of Philosophy in Physics</strong> (Florida State University, USA)
-                <span style="float: right;"><strong>(2020–2024)</strong></span><br>
-                Thesis:
-                <a href="https://repository.lib.fsu.edu/islandora/object/fsu:954602" target="_blank">
-                    Photoproduction of K<sup>0</sup>&#772;K<sup>0</sup> with the GlueX Experiment
-                </a>
-                </li>
+            <div class="pub-item">
+                <img src="assets/img/logo_fsu.jpeg" alt="GlueX logo" class="pub-logo" loading="lazy">
+                <div class="pub-text">
+                    <strong>Doctor of Philosophy in Physics</strong> 
+                    Florida State University, USA
+                    <br>2020-2024
+                    <br>Thesis:
+                    <a href="https://repository.lib.fsu.edu/islandora/object/fsu:954602" target="_blank">Photoproduction of K<sup>0</sup>&#772;K<sup>0</sup> with the GlueX Experiment</a>
+                </div>
+            </div>
 
-                <li>
-                <strong>Master of Science in Physics</strong> (Florida State University, USA)
-                <span style="float: right;"><strong>(2017–2020)</strong></span><br>
-                Thesis:
-                <a href="https://diginole.lib.fsu.edu/islandora/object/fsu:777104" target="_blank">
-                    A Study of γp → K<sub>S</sub><sup>0</sup>K<sub>S</sub><sup>0</sup>p With The GlueX Experiment
-                </a>
-                </li>
+            <div class="pub-item">
+                <img src="assets/img/logo_fsu.jpeg" alt="GlueX logo" class="pub-logo" loading="lazy">
+                <div class="pub-text">
+                    <strong>Master of Science in Physics</strong>
+                    Florida State University, USA
+                    <br>2017-2020
+                    <br>Thesis:
+                    <a href="https://diginole.lib.fsu.edu/islandora/object/fsu:777104" target="_blank">A Study of γp → K<sub>S</sub><sup>0</sup>K<sub>S</sub><sup>0</sup>p With The GlueX Experiment</a>
+                </div>
+            </div>
 
-                <li>
-                <strong>Bachelor of Science in Physics</strong> (Universidad de Puerto Rico, PR)
-                <span style="float: right;"><strong>(2010–2017)</strong></span><br>
-                Research Internship at the University of Nebraska–Lincoln
-                </li>
-            </ul>
+            <div class="pub-item">
+                <img src="assets/img/logo_uprrp.jpg" alt="GlueX logo" class="pub-logo" loading="lazy">
+                <div class="pub-text">
+                    <strong>Bachelor of Science in Physics</strong>
+                    Universidad de Puerto Rico Recinto de Rio Piedras, PR
+                    <br>2010-2017
+                </div>
+            </div>
 
             <h2>Certificates</h2>
-            <ul>
-                <li>
-                    <strong>Applied Machine Learning in Python</strong> <a href="https://www.coursera.org/account/accomplishments/verify/2KI8A0X457XE">Coursera certificate</a>
-                    <span style="float: right;"> 
-                        <strong>(2025)</strong>
-                    </span>
-                </li>
+            <div class="pub-item">
+                <img src="assets/img/logo_coursera.svg" alt="Coursera" class="pub-logo" loading="lazy">
+                <div class="pub-text">
+                    <strong>Applied Machine Learning in Python</strong>
+                    2025
+                    <br><a href="https://www.coursera.org/account/accomplishments/verify/DHK2PA00I1UB">Certificate</a>
+                </div>
+            </div>
 
-                <li>
-                    <strong>SQL for Data Science</strong> <a href="https://www.coursera.org/account/accomplishments/verify/DHK2PA00I1UB">Coursera certificate</a>
-                    <span style="float: right;">
-                        <strong>(2025)</strong>
-                    </span>
-                </li>
+            <div class="pub-item">
+                <img src="assets/img/logo_coursera.svg" alt="Coursera" class="pub-logo" loading="lazy">
+                <div class="pub-text">
+                    <strong>SQL for Data Science</strong>
+                    2025
+                    <br><a href="https://www.coursera.org/account/accomplishments/verify/DHK2PA00I1UB">Certificate</a>
+                </div>
+            </div>
 
-                <li>
-                    <strong>Learning Linux for LFCA Certification</strong> <a href="https://www.coursera.org/account/accomplishments/specialization/0YT30RQEM5L8">Coursera certificate</a>
-                    <span style="float: right;">
-                        <strong>(2024)</strong>
-                    </span>
-                </li>
-            </ul>
+            <div class="pub-item">
+                <img src="assets/img/logo_coursera.svg" alt="Coursera" class="pub-logo" loading="lazy">
+                <div class="pub-text">
+                    <strong>Learning Linux for LFCA Certification</strong>
+                    2024
+                    <br><a href="https://www.coursera.org/account/accomplishments/specialization/0YT30RQEM5L8">Certificate</a>
+                </div>
+            </div>
             </section>
 
             <section id="experience">
@@ -148,14 +161,48 @@
                 </ul>
             </section>
 
-            <!-- <section id="projects">
-                <h2>Projects</h2>
-                <ul>
-                    <li>
+            <section id="projects">
+                <h1>Projects</h1>
 
-                    </li>
-                </ul>
-            </section> -->
+                <div class="projects-grid">
+                    <a class="project-card" href="./pages/project-phiSDMEs.html">
+                    <figure>
+                        <img src="assets/img/gluex_logo.png" alt="Measurement of φ(1020) SDMEs" loading="lazy">
+                        <figcaption>
+                        <p>
+                            <b>Published paper</b><br/>
+                            Measurement of φ(1020) → K<sub>S</sub>K<sub>L</sub> Spin-Density Matrix Elements in photoproduction. This work was one the topic main topics of my dissertation.
+                        </p>
+                        </figcaption>
+                    </figure>
+                    </a>
+
+                    <a class="project-card" href="./pages/project-ksklTwoPeakStructure.html">
+                    <figure>
+                        <img src="assets/img/gluex_logo.png" alt="Two peak structure in photoproduced neutral Kaon pairs" loading="lazy">
+                        <figcaption>
+                        <p>
+                            <b>Working paper</b><br/>
+                            Modeling of a two peak structure in the KsKl spectrum in the 1.4-1.8 GeV regions.
+                        </p>
+                        </figcaption>
+                    </figure>
+                    </a>
+
+                    <a class="project-card" href="https://github.com/gabyrod7/amptoolsManager" target="_blank" rel="noopener noreferrer">
+                    <figure>
+                        <img src="assets/img/github.png" alt="amptoolsManager" loading="lazy">
+                        <figcaption>
+                        <p>
+                            <b>amptoolsManager</b><br/>
+                            A multithreaded command-line Python tool for carrying out SDME and PWA mesurements of GlueX data with AmpTools.
+                        </p>
+                        </figcaption>
+                    </figure>
+                    </a>
+                </div>
+            </section>
+
 
             <section id="conferences">
                 <h1>Public Speaking</h1>
@@ -218,128 +265,134 @@
             </section>
 
             <section id="publications">
-            <h1>Publications</h1>
-            <ul>
-                <li>
-                (GlueX Collaboration)
-                <strong>Observation of a two-peak structure in the 1.2–2.0 GeV K<sub>S</sub>K<sub>L</sub> mass region</strong><br>
-                <em>— Working paper</em>
-                </li>
+                <h1>Publications</h1>
 
-                <li>
-                (GlueX Collaboration)
-                <strong>
-                    Measurement of Spin-Density Matrix Elements in φ(1020) → K<sub>S</sub>K<sub>L</sub> Photoproduction
-                    with a Linearly Polarized Photon Beam at E<sub>γ</sub>=8.2–8.8 GeV
-                </strong><br>
-                <em>— Primary contributor</em> &nbsp;·&nbsp;
-                <a href="https://journals.aps.org/prc/abstract/10.1103/2tdc-5by6" target="_blank">Phys. Rev. C 112, 025203</a>
-                &nbsp;·&nbsp;
-                <a href="https://arxiv.org/abs/2504.01194" target="_blank">arXiv:2504.01194</a>
-                </li>
+                <div class="pub-item">
+                    <img src="assets/img/gluex_logo.png" alt="GlueX logo" class="pub-logo" loading="lazy">
+                    <div class="pub-text">
+                        <strong>Observation of a two-peak structure in the 1.2–2.0 GeV K<sub>S</sub>K<sub>L</sub> mass region</strong>
+                        <em>— Working paper</em>
+                    </div>
+                </div>
 
-                <li>
-                (GlueX Collaboration)
-                <strong>First Measurement of a<sub>2</sub><sup>0</sup>(1320) Polarized Photoproduction Cross Section</strong><br>
-                <a href="https://journals.aps.org/prc/abstract/10.1103/jfzb-rfl4" target="_blank">Phys. Rev. C 112, 015204 (2025)</a>
-                &nbsp;·&nbsp;
-                <a href="https://arxiv.org/abs/2501.03091" target="_blank">arXiv:2501.03091</a>
-                </li>
+                <div class="pub-item">
+                    <img src="assets/img/gluex_logo.png" alt="GlueX logo" class="pub-logo" loading="lazy">
+                    <div class="pub-text">
+                        <strong>Measurement of Spin-Density Matrix Elements in φ(1020) → K<sub>S</sub>K<sub>L</sub> Photoproduction with a Linearly Polarized Photon Beam at E<sub>γ</sub>=8.2–8.8 GeV</strong>
+                        <em>— Primary contributor</em> &nbsp;·&nbsp;
+                        <a href="https://journals.aps.org/prc/abstract/10.1103/2tdc-5by6" target="_blank">Phys. Rev. C 112, 025203 (2025)</a> ·
+                        <a href="https://arxiv.org/abs/2504.01194" target="_blank">arXiv:2504.01194</a>
+                    </div>
+                </div>
 
-                <li>
-                (GlueX Collaboration)
-                <strong>Measurement of Spin-Density Matrix Elements in Δ<sup>++</sup>(1232) Photoproduction</strong><br>
-                <a href="https://www.sciencedirect.com/science/article/pii/S0370269325001285" target="_blank">Phys. Lett. B 863, 139368 (2025)</a>
-                &nbsp;·&nbsp;
-                <a href="https://arxiv.org/abs/2406.12829" target="_blank">arXiv:2406.12829</a>
-                </li>
+                <div class="pub-item">
+                    <img src="assets/img/gluex_logo.png" alt="GlueX logo" class="pub-logo" loading="lazy">
+                    <div class="pub-text">
+                        <strong>First Measurement of a<sub>2</sub><sup>0</sup>(1320) Polarized Photoproduction Cross Section</strong>
+                        <a href="https://journals.aps.org/prc/abstract/10.1103/jfzb-rfl4" target="_blank">Phys. Rev. C 112, 015204 (2025)</a> ·
+                        <a href="https://arxiv.org/abs/2501.03091" target="_blank">arXiv:2501.03091</a>
+                    </div>
+                </div>
 
-                <li>
-                (GlueX Collaboration)
-                <strong>An Upper Limit on the Photoproduction Cross Section of the Spin-Exotic π<sub>1</sub>(1600)</strong><br>
-                <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.261903" target="_blank">Phys. Rev. Lett. 133, 261903</a>
-                &nbsp;·&nbsp;
-                <a href="https://arxiv.org/abs/2407.03316" target="_blank">arXiv:2407.03316</a>
-                </li>
+                <div class="pub-item">
+                    <img src="assets/img/gluex_logo.png" alt="GlueX logo" class="pub-logo" loading="lazy">
+                    <div class="pub-text">
+                        <strong>Measurement of Spin-Density Matrix Elements in Δ<sup>++</sup>(1232) Photoproduction</strong>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0370269325001285" target="_blank">Phys. Lett. B 863, 139368 (2025)</a>
+                        &nbsp;·&nbsp;
+                        <a href="https://arxiv.org/abs/2406.12829" target="_blank">arXiv:2406.12829</a>
+                    </div>
+                </div>
 
-                <li>
-                (GlueX Collaboration)
-                <strong>
-                    Measurement of the J/ψ Photoproduction Cross Section over the Full Near-Threshold Kinematic Region
-                </strong><br>
-                <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.108.025201" target="_blank">Phys. Rev. C 108, 025201</a>
-                &nbsp;·&nbsp;
-                <a href="https://arxiv.org/abs/2304.03845" target="_blank">arXiv:2304.03845</a>
-                </li>
+                <div class="pub-item">
+                    <img src="assets/img/gluex_logo.png" alt="GlueX logo" class="pub-logo" loading="lazy">
+                    <div class="pub-text">
+                        <strong>An Upper Limit on the Photoproduction Cross Section of the Spin-Exotic π<sub>1</sub>(1600)</strong>
+                        <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.261903" target="_blank">Phys. Rev. Lett. 133, 261903</a>
+                        &nbsp;·&nbsp;
+                        <a href="https://arxiv.org/abs/2407.03316" target="_blank">arXiv:2407.03316</a>
+                    </div>
+                </div>
 
-                <li>
-                (GlueX Collaboration)
-                <strong>
-                    Measurement of Spin-Density Matrix Elements in ρ(770) Production with a Linearly Polarized Photon Beam
-                    at E<sub>γ</sub>=8.2–8.8 GeV
-                </strong><br>
-                <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.108.055204" target="_blank">Phys. Rev. C 108, 055204</a>
-                &nbsp;·&nbsp;
-                <a href="https://arxiv.org/abs/2305.09047" target="_blank">arXiv:2305.09047</a>
-                </li>
+                <div class="pub-item">
+                    <img src="assets/img/gluex_logo.png" alt="GlueX logo" class="pub-logo" loading="lazy">
+                    <div class="pub-text">
+                        <strong>Measurement of the J/ψ Photoproduction Cross Section over the Full Near-Threshold Kinematic Region</strong>
+                        <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.108.025201" target="_blank">Phys. Rev. C 108, 025201</a>
+                        &nbsp;·&nbsp;
+                        <a href="https://arxiv.org/abs/2304.03845" target="_blank">arXiv:2304.03845</a>
+                    </div>
+                </div>
 
-                <li>
-                (GlueX Collaboration)
-                <strong>Measurement of Spin-Density Matrix Elements in Λ(1520) Photoproduction at 8.2 GeV to 8.8 GeV</strong><br>
-                <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.105.035201" target="_blank">Phys. Rev. C 105, 035201</a>
-                &nbsp;·&nbsp;
-                <a href="https://arxiv.org/abs/2107.12314" target="_blank">arXiv:2107.12314</a>
-                </li>
+                <div class="pub-item">
+                    <img src="assets/img/gluex_logo.png" alt="GlueX logo" class="pub-logo" loading="lazy">
+                    <div class="pub-text">
+                        <strong>Measurement of Spin-Density Matrix Elements in ρ(770) Production with a Linearly Polarized Photon Beam at E<sub>γ</sub>=8.2–8.8 GeV</strong>
+                        <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.108.055204" target="_blank">Phys. Rev. C 108, 055204</a>
+                        &nbsp;·&nbsp;
+                        <a href="https://arxiv.org/abs/2305.09047" target="_blank">arXiv:2305.09047</a>
+                    </div>
+                </div>
 
-                <li>
-                (GlueX Collaboration)
-                <strong>Search for Photoproduction of Axion-Like Particles at GlueX</strong><br>
-                <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.052007" target="_blank">Phys. Rev. D 105, 052007</a>
-                &nbsp;·&nbsp;
-                <a href="https://arxiv.org/abs/2109.13439" target="_blank">arXiv:2109.13439</a>
-                </li>
+                <div class="pub-item">
+                    <img src="assets/img/gluex_logo.png" alt="GlueX logo" class="pub-logo" loading="lazy">
+                    <div class="pub-text">
+                        <strong>Measurement of Spin-Density Matrix Elements in Λ(1520) Photoproduction at 8.2 GeV to 8.8 GeV</strong>
+                        <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.105.035201" target="_blank">Phys. Rev. C 105, 035201</a>
+                        &nbsp;·&nbsp;
+                        <a href="https://arxiv.org/abs/2107.12314" target="_blank">arXiv:2107.12314</a>
+                    </div>
+                </div>
 
-                <li>
-                (GlueX Collaboration)
-                <strong>
-                    Measurement of Beam Asymmetry for π<sup>−</sup>Δ<sup>++</sup> Photoproduction on the Proton
-                    at E<sub>γ</sub>=8.5 GeV
-                </strong><br>
-                <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.103.L022201" target="_blank">Phys. Rev. C 103, L022201</a>
-                &nbsp;·&nbsp;
-                <a href="https://arxiv.org/abs/2009.07326" target="_blank">arXiv:2009.07326</a>
-                </li>
-            </ul>
+                <div class="pub-item">
+                    <img src="assets/img/gluex_logo.png" alt="GlueX logo" class="pub-logo" loading="lazy">
+                    <div class="pub-text">
+                        <strong>Search for Photoproduction of Axion-Like Particles at GlueX</strong>
+                        <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.052007" target="_blank">Phys. Rev. D 105, 052007</a>
+                        &nbsp;·&nbsp;
+                        <a href="https://arxiv.org/abs/2109.13439" target="_blank">arXiv:2109.13439</a>
+                    </div>
+                </div>
+
+                <div class="pub-item">
+                    <img src="assets/img/gluex_logo.png" alt="GlueX logo" class="pub-logo" loading="lazy">
+                    <div class="pub-text">
+                        <strong>Measurement of Beam Asymmetry for π<sup>−</sup>Δ<sup>++</sup> Photoproduction on the Proton at E<sub>γ</sub>=8.5 GeV</strong>
+                        <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.103.L022201" target="_blank">Phys. Rev. C 103, L022201</a>
+                        &nbsp;·&nbsp;
+                        <a href="https://arxiv.org/abs/2009.07326" target="_blank">arXiv:2009.07326</a>
+                    </div>
+                </div>
             </section>
 
             <section id="teaching">
-            <h1>Teaching</h1>
-            <ul>
-                <li>
-                <strong>Thermal and Statistical Physics</strong> (Grader)
-                <span style="float: right;">2023 Spring Semester</span>
-                </li>
-                <li>
-                <strong>Classical Mechanics-II</strong> (Grader)
-                <span style="float: right;">2022 Fall Semester</span>
-                </li>
-                <li>
-                <strong>Physics-I Laboratory</strong> (Algebra based)
-                <span style="float: right;">2019 Fall Semester</span>
-                </li>
-                <li>
-                <strong>Physics-II Laboratory</strong> (Calculus based)
-                <span style="float: right;">2019 Spring Semester</span>
-                </li>
-                <li>
-                <strong>Physics-I Laboratory</strong> (Calculus based)
-                <span style="float: right;">2018 Fall Semester</span>
-                </li>
-            </ul>
+                <h1>Teaching</h1>
+                <ul>
+                    <li>
+                    <strong>Thermal and Statistical Physics</strong> (Grader)
+                    <span style="float: right;">2023 Spring Semester</span>
+                    </li>
+                    <li>
+                    <strong>Classical Mechanics-II</strong> (Grader)
+                    <span style="float: right;">2022 Fall Semester</span>
+                    </li>
+                    <li>
+                    <strong>Physics-I Laboratory</strong> (Algebra based)
+                    <span style="float: right;">2019 Fall Semester</span>
+                    </li>
+                    <li>
+                    <strong>Physics-II Laboratory</strong> (Calculus based)
+                    <span style="float: right;">2019 Spring Semester</span>
+                    </li>
+                    <li>
+                    <strong>Physics-I Laboratory</strong> (Calculus based)
+                    <span style="float: right;">2018 Fall Semester</span>
+                    </li>
+                </ul>
             </section>
             </main>
         </div>
         <!-- <script src="./script.js" async defer></script> -->
-        <script src="./script.js?v=1" async defer></script>
+        <script src="./script.js?v=2" async defer></script>
     </body>
 </html>

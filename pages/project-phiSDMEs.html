@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../assets/img/icon.png" />
+  <title>Measurement of Spin-Density Matrix Elements</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="wrap">
+    <aside class="left">
+      <img src="../assets/img/photo.jpg" alt="Profile photo" class="profile-pic"/>
+      <nav class="nav">
+        <a href="../index.html" class="button">← Back to Portfolio</a>
+        <a href="../index.html#projects" class="button">← Back to Projects</a>
+      </nav>
+    </aside>
+
+    <main class="right">
+      <section class="project-content">
+        <h1>Measurement of Spin-Density Matrix Elements in φ(1020) → K<sub>S</sub>K<sub>L</sub></h1>
+
+        <h2>Overview</h2>
+        <p>
+          As part of my PhD. dissertation I measured the Spin-Density Matrix Elements of &phi;(1020) using data collected 
+          by the GlueX Collaboration. This measurement was published in <a href="https://journals.aps.org/prc/abstract/10.1103/2tdc-5by6" target="_blank">Phys. Rev. C</a>.
+        </p>
+
+        <h2>Paper abstract</h2>
+          <p>
+          We measure the Spin-Density Matrix Elements (SDMEs) for the photoproduction of
+          &phi;(1020) off of the proton in its decay to K<sub>S</sub><sup>0</sup> K<sub>L</sub><sup>0</sup>, using
+          105&nbsp;pb<sup>&minus;1</sup> of data collected with a linearly polarized photon beam
+          using the GlueX experiment. The SDMEs are measured in nine bins of the squared
+          four-momentum transfer <i>t</i> in the range &minus;<i>t</i> = 0.15&ndash;1.0&nbsp;GeV<sup>2</sup>,
+          providing the first measurement of their <i>t</i>-dependence for photon beam energies
+          E<sub>&gamma;</sub> = 8.2&ndash;8.8&nbsp;GeV. We confirm the dominance of Pomeron
+          exchange in this region, and put constraints on the contribution of other Regge
+          exchanges. We also find that helicity amplitudes where the helicity of the photon
+          and the &phi;(1020) differ by two units are negligible.
+          </p>
+
+        <h2>Paper highlights</h2>
+          <ul>
+            <li>Large event sample: ~6.5 × 10⁵ φ(1020) mesons were analysed, a dataset orders of magnitude larger than prior measurements in this beam-energy range.</li>
+            <li>First measurement of the t-dependence of φ(1020) SDMEs in this photon-energy region (8.2-8.8 GeV).</li>
+            <li>High-precision extraction of nine independent SDMEs using a linearly polarized beam, allowing separation of natural vs. unnatural parity exchange contributions and helicity‐flip vs. helicity‐conserving amplitudes.</li>
+            <li>Confirmation that at low –t the production is consistent with s-channel helicity conservation (SCHC) and natural parity exchange (NPE), whereas at higher –t deviations appear, in line with predictions from a Regge-based model by the Joint Physics Analysis Center (JPAC).</li>
+            <li>Quantitative constraints on possible contributions from non-pomeron exchanges (such as π and η exchange) and on double-helicity-flip amplitudes, which are found to be negligible within uncertainties.</li>
+          </ul>
+
+        <h2>Technologies Used</h2>
+          <ul>
+            <li>Data analysis: Led the data exploration phase, developed data quality metrics, validated analysis approach with Monte Carlo techniques, and led the modeling and interpretation of this measurement.</li>
+            <li>High Performance Computing: I used HPC clusters at Jefferson Lab and clusters with multiple 32 core servers to process terabytes of data and perform Monte Carlo simulations. Used batch systems such as swif2 from Jefferson Lab and high-throughput computing systems such as HTCondor.</li>
+            <li>Programming: I worked with C++ and Python to efficiently process and study this dataset. I also developed a multithreaded command-line tool to automate and speed up several steps in the analysis workflow.</li>
+            <li>Linux environment: The HPC and clusters I worked on used CentOS and later AlmaLinux.</li>
+            <li>Fitting framework: Use of the AmpTools framework to perform unbinned extended-maximum-likelihood fits of an angular-distribution model to extract SDMEs in each –t bin; formalism incorporates the angular dependence of vector-meson decay, beam polarization, and production kinematics.</li>
+          </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
+

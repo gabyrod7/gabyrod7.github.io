@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../assets/img/icon.png" />
+  <title>Project Title – Your Name</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      position: relative;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Watermark styling */
+    .watermark {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-30deg);
+      font-size: 4rem;
+      color: rgba(0, 0, 0, 0.1);
+      white-space: nowrap;
+      z-index: 9999;
+      pointer-events: none; /* allows clicking through it */
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <aside class="left">
+      <img src="../assets/img/photo.jpg" alt="Profile photo" class="profile-pic">
+      <nav class="nav">
+        <a href="../index.html" class="button">← Back to Portfolio</a>
+        <a href="../index.html#projects" class="button">← Back to Projects</a>
+      </nav>
+    </aside>
+
+    <main class="right">
+      <section class="project-content">
+        <h1>Observation of two peak structure in photoproduced K<sub>S</sub>K<sub>L</sub></h1>
+
+        <h2>Overview</h2>
+        <p>
+          Briefly describe what this project does, its purpose, and any interesting challenges or results.
+          For example: “This tool visualizes meson photoproduction data from the GlueX experiment using Python and Plotly.”
+        </p>
+
+        <h2>Key Features</h2>
+        <ul>
+          <li>Feature 1 — short description.</li>
+          <li>Feature 2 — short description.</li>
+          <li>Feature 3 — short description.</li>
+        </ul>
+
+        <h2>Technologies Used</h2>
+        <!-- <p>Python, NumPy, Matplotlib, Pandas, JavaScript, HTML, CSS</p> -->
+      </section>
+      <div class="watermark">Page under construction</div>
+    </main>
+  </div>
+</body>
+</html>
+

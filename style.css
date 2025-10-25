@@ -89,6 +89,7 @@ body {
 .right {
   /* flex: 1; */
   flex: 1 1 auto;
+  scroll-behavior: smooth;
 }
 
 .right h1 {
@@ -159,4 +160,110 @@ ul li {
 .github-icon:hover {
   transform: scale(1.1);
   opacity: 0.8;
+}
+
+.pub-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  padding: 0.8rem;
+  /* background: #f9f9f9; */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); */
+  transition: transform 0.1s, box-shadow 0.2s;
+
+  background: transparent;
+  /* border-left: 4px solid #007acc; */
+
+}
+
+.pub-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.pub-logo {
+  /* width: 125px; */
+  width: 80px;
+  height: auto;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.pub-text {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.pub-text strong {
+  display: block;
+  font-size: 1rem;
+  color: #222;
+}
+
+.pub-text a {
+  text-decoration: none;
+  color: #007acc;
+  transition: color 0.2s;
+}
+
+.pub-text a:hover {
+  color: #005fa3;
+}
+
+/* Projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+
+  padding-top: 1rem;
+  padding-right: 1.5rem;
+  padding-bottom: 0.8rem;
+  padding-left: 1rem;
+}
+
+/* Clickable card */
+.project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  /* border-radius: 10px; */
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  transition: transform .12s ease, box-shadow .2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+}
+
+.project-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  /* object-fit: cover; */
+  object-fit: scale-down;
+  display: block;
+  /* border-bottom: 1px solid #ddd; */
+}
+
+/* Text */
+/* .project-card figcaption {
+  padding: .75rem .9rem;
+} */
+
+.project-card p {
+  /* margin: 0; */
+  /* font-size: .9rem; */
+  /* color: #555; */
+  border-top: 1px solid #ddd;
+  padding-top: 0.5rem;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
 }
