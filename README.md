@@ -27,3 +27,4 @@ Some portfolio pages I used as inspiration
 2. <a href="https://thinhdanggroup.github.io/" target="_blank">Thinh Dang</a>
 3. <a href="https://vinaysomawat.github.io/" target="_black">Github page by vinaysomawat</a>
 4. <a href="https://github.com/guilyx/awesome-github-pages-portfolios?tab=readme-ov-file" target="_blank">Github page with multiple protfolio examples</a>
+5. <a href="https://endtimes.dev/" target="_blank">endtimes.dev</a>
