@@ -20,12 +20,15 @@ This is a protfolio page with a two column layout implements with HTML/CSS/JavaS
   </kbd>
 </p>
 
+## Useful Resources
+- A favicon is a file containing one or more small icons associated with a particular website or web page, I generated the favicon for this webpage using  <a href="https://favicon.io/">favicon.io</a>.
+
 ## Inspiration
 
 Some portfolio pages I used as inspiration
-1. <a href="https://github.com/varadbhogayata/varadbhogayata.github.io/tree/master" target="_blank">Github page by varadbhogayata</a>
-2. <a href="https://thinhdanggroup.github.io/" target="_blank">Thinh Dang</a>
-3. <a href="https://vinaysomawat.github.io/" target="_black">Github page by vinaysomawat</a>
-4. <a href="https://github.com/guilyx/awesome-github-pages-portfolios?tab=readme-ov-file" target="_blank">Github page with multiple protfolio examples</a>
-5. <a href="https://endtimes.dev/" target="_blank">endtimes.dev</a>
-6. <a href="https://steveklabnik.com/" target="_blank">Steve Klabnik</a>
+- <a href="https://github.com/varadbhogayata/varadbhogayata.github.io/tree/master" target="_blank">Github page by varadbhogayata</a>
+- <a href="https://thinhdanggroup.github.io/" target="_blank">Thinh Dang</a>
+- <a href="https://vinaysomawat.github.io/" target="_black">Github page by vinaysomawat</a>
+- <a href="https://github.com/guilyx/awesome-github-pages-portfolios?tab=readme-ov-file" target="_blank">Github page with multiple protfolio examples</a>
+- <a href="https://endtimes.dev/" target="_blank">endtimes.dev</a>
+- <a href="https://steveklabnik.com/" target="_blank">Steve Klabnik</a>
