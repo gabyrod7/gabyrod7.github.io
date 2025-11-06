@@ -22,6 +22,7 @@ This is a protfolio page with a two column layout implements with HTML/CSS/JavaS
 
 ## Useful Resources
 - A favicon is a file containing one or more small icons associated with a particular website or web page, I generated the favicon for this webpage using  <a href="https://favicon.io/">favicon.io</a>.
+- Two useful websites for getting icons are (simpleicons.org)[https://simpleicons.org/] and (fonts.google.com)[https://fonts.google.com/icons]
 
 ## Inspiration
 
