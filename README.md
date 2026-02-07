@@ -27,6 +27,12 @@ This is a protfolio page with a two column layout implements with HTML/CSS/JavaS
 ## Inspiration
 
 Some portfolio pages I used as inspiration
+- <a href="https://maggiewolff.github.io/portfolio/" target="_blank">Maggie Wolff</a>
+- <a href="https://tdhopper.com/" target="_blank">Tim Hopper</a>
+- <a href="https://www.yan-holtz.com/" target="_blank">Yan Holtz</a>
+- <a href="https://jameskle.com/" target="_blank">James Le</a>
+- <a href="https://www.gingerbill.org/" target="_blank">gingerBill</a>
+- <a href="https://binnie869.github.io/" target="_blank">Anubhav Gupta</a>
 - <a href="https://github.com/varadbhogayata/varadbhogayata.github.io/tree/master" target="_blank">Github page by varadbhogayata</a>
 - <a href="https://thinhdanggroup.github.io/" target="_blank">Thinh Dang</a>
 - <a href="https://vinaysomawat.github.io/" target="_black">Github page by vinaysomawat</a>
