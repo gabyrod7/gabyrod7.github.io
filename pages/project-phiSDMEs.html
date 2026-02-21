@@ -34,6 +34,125 @@
     .paper-view-panel {
       padding: 0 1rem 0.8rem 1rem;
     }
+
+    .paper-overview-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 1fr);
+      gap: 1rem;
+      align-items: start;
+      padding-right: 1rem;
+    }
+
+    .paper-overview-right {
+      padding-top: 0.4rem;
+    }
+
+    .figure-view-toggle {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .figure-view-button {
+      border: 1px solid #bbb;
+      background: #fff;
+      color: #222;
+      padding: 0.35rem 0.65rem;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.9rem;
+    }
+
+    .figure-view-button[aria-selected="true"] {
+      background: #007acc;
+      border-color: #007acc;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .figure-panel[hidden] {
+      display: none;
+    }
+
+    .paper-overview-right figure {
+      margin: 0;
+      border: 1px solid #ddd;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .paper-overview-right img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 0;
+      border-radius: 0;
+      cursor: zoom-in;
+    }
+
+    .paper-overview-right figcaption {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      padding: 0.6rem 0.8rem;
+      color: #333;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    @media (max-width: 900px) {
+      .paper-overview-grid {
+        grid-template-columns: 1fr;
+        padding-right: 0;
+      }
+
+      .paper-overview-right {
+        padding: 0 1rem;
+      }
+    }
+
+    .image-lightbox {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(0, 0, 0, 0.82);
+      z-index: 1000;
+      padding: 1rem;
+    }
+
+    .image-lightbox[hidden] {
+      display: none;
+    }
+
+    .image-lightbox-content {
+      position: relative;
+      width: min(1200px, 100%);
+      max-height: 92vh;
+      display: grid;
+      place-items: center;
+    }
+
+    .image-lightbox img {
+      max-width: 100%;
+      max-height: 88vh;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      border-radius: 2px;
+    }
+
+    .image-lightbox-close {
+      position: absolute;
+      top: -0.2rem;
+      right: -0.2rem;
+      border: 1px solid #ddd;
+      background: #fff;
+      color: #111;
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.25rem;
+      line-height: 1;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -51,36 +170,79 @@
         <h1>Published Paper: Spin-Density Matrix Elements in &phi;(1020) Photoproduction</h1>
 
         <h2>Paper overview</h2>
-        <div class="paper-view-toggle" role="tablist" aria-label="Paper overview mode">
-          <button id="paper-tab-brief" class="paper-view-button" role="tab" aria-selected="true" aria-controls="paper-panel-brief" type="button">
-            Paper in 30 seconds
-          </button>
-          <button id="paper-tab-abstract" class="paper-view-button" role="tab" aria-selected="false" aria-controls="paper-panel-abstract" type="button">
-            Paper abstract
-          </button>
-        </div>
+        <div class="paper-overview-grid">
+          <div class="paper-overview-left">
+            <div class="paper-view-toggle" role="tablist" aria-label="Paper overview mode">
+              <button id="paper-tab-brief" class="paper-view-button" role="tab" aria-selected="true" aria-controls="paper-panel-brief" type="button">
+                Paper in 30 seconds
+              </button>
+              <button id="paper-tab-abstract" class="paper-view-button" role="tab" aria-selected="false" aria-controls="paper-panel-abstract" type="button">
+                Paper abstract
+              </button>
+            </div>
 
-        <div id="paper-panel-brief" class="paper-view-panel" role="tabpanel" aria-labelledby="paper-tab-brief">
-          <p>
-            I led a data-intensive analysis to measure how &phi;(1020) particles are produced in high-energy photon-proton
-            collisions. Using a TB-scale experimental dataset and statistical modeling, I extracted high-precision observables
-            that describe the underlying production dynamics. The results were published in
-            <a href="https://journals.aps.org/prc/abstract/10.1103/2tdc-5by6" target="_blank" rel="noopener noreferrer">Physical Review C</a>
-            and provide new constraints on theoretical models.
-          </p>
-        </div>
+            <div id="paper-panel-brief" class="paper-view-panel" role="tabpanel" aria-labelledby="paper-tab-brief">
+              <p>
+                I led a data-intensive analysis to measure how &phi;(1020) particles are produced in high-energy photon-proton
+                collisions. Using a TB-scale experimental dataset and statistical modeling, I extracted high-precision observables
+                that describe the underlying production dynamics. The results were published in
+                <a href="https://journals.aps.org/prc/abstract/10.1103/2tdc-5by6" target="_blank" rel="noopener noreferrer">Physical Review C</a>
+                and provide new constraints on theoretical models.
+              </p>
+            </div>
 
-        <div id="paper-panel-abstract" class="paper-view-panel" role="tabpanel" aria-labelledby="paper-tab-abstract" hidden>
-          <p>
-            We measure the spin-density matrix elements (SDMEs) for the photoproduction of &phi;(1020) off of the proton
-            in its decay to K<sub>S</sub><sup>0</sup>K<sub>L</sub><sup>0</sup>, using 105&nbsp;pb<sup>&minus;1</sup>
-            of data collected with a linearly polarized photon beam using the GlueX experiment. The SDMEs are measured in
-            nine bins of the squared four-momentum transfer <i>t</i> in the range &minus;<i>t</i>=0.15-1.0&nbsp;GeV<sup>2</sup>,
-            providing the first measurement of their <i>t</i>-dependence for photon beam energies E<sub>&gamma;</sub>=8.2-8.8&nbsp;GeV.
-            We confirm the dominance of Pomeron exchange in this region, and put constraints on the contribution of other
-            Regge exchanges. We also find that helicity amplitudes where the helicity of the photon and the &phi;(1020)
-            differ by two units are negligible.
-          </p>
+            <div id="paper-panel-abstract" class="paper-view-panel" role="tabpanel" aria-labelledby="paper-tab-abstract" hidden>
+              <p>
+                We measure the spin-density matrix elements (SDMEs) for the photoproduction of &phi;(1020) off of the proton
+                in its decay to K<sub>S</sub><sup>0</sup>K<sub>L</sub><sup>0</sup>, using 105&nbsp;pb<sup>&minus;1</sup>
+                of data collected with a linearly polarized photon beam using the GlueX experiment. The SDMEs are measured in
+                nine bins of the squared four-momentum transfer <i>t</i> in the range &minus;<i>t</i>=0.15-1.0&nbsp;GeV<sup>2</sup>,
+                providing the first measurement of their <i>t</i>-dependence for photon beam energies E<sub>&gamma;</sub>=8.2-8.8&nbsp;GeV.
+                We confirm the dominance of Pomeron exchange in this region, and put constraints on the contribution of other
+                Regge exchanges. We also find that helicity amplitudes where the helicity of the photon and the &phi;(1020)
+                differ by two units are negligible.
+              </p>
+            </div>
+          </div>
+
+          <aside class="paper-overview-right" aria-label="Paper figure preview">
+            <div class="figure-view-toggle" role="tablist" aria-label="Paper figure selection">
+              <button id="figure-tab-1" class="figure-view-button" role="tab" aria-selected="true" aria-controls="figure-panel-1" type="button">
+                Figure 1
+              </button>
+              <button id="figure-tab-2" class="figure-view-button" role="tab" aria-selected="false" aria-controls="figure-panel-2" type="button">
+                Figure 2
+              </button>
+              <button id="figure-tab-3" class="figure-view-button" role="tab" aria-selected="false" aria-controls="figure-panel-3" type="button">
+                Figure 3
+              </button>
+              <button id="figure-tab-4" class="figure-view-button" role="tab" aria-selected="false" aria-controls="figure-panel-4" type="button">
+                Figure 4
+              </button>
+            </div>
+
+            <figure id="figure-panel-1" class="figure-panel" role="tabpanel" aria-labelledby="figure-tab-1">
+              <img src="../assets/img/projects/phiSDMEs/sdmes.svg" alt="Measured spin-density matrix elements as a function of momentum transfer">
+              <!-- <figcaption>
+                Measured SDMEs as a function of momentum transfer.
+              </figcaption> -->
+            </figure>
+
+            <figure id="figure-panel-2" class="figure-panel" role="tabpanel" aria-labelledby="figure-tab-2" hidden>
+              <img src="../assets/img/projects/phiSDMEs/Psigma.svg" alt="Beam-asymmetry related observable with model comparison">
+              <!-- <figcaption>
+                Beam-asymmetry related observable and model comparison.
+              </figcaption> -->
+            </figure>
+
+            <figure id="figure-panel-3" class="figure-panel" role="tabpanel" aria-labelledby="figure-tab-3" hidden>
+              <img src="../assets/img/projects/phiSDMEs/rhoN.svg" alt="rhoN result plot from the published phi(1020) analysis">
+            </figure>
+
+            <figure id="figure-panel-4" class="figure-panel" role="tabpanel" aria-labelledby="figure-tab-4" hidden>
+              <img src="../assets/img/projects/phiSDMEs/rhoU.svg" alt="rhoU result plot from the published phi(1020) analysis">
+            </figure>
+          </aside>
         </div>
 
         <h2>Highlights</h2>
@@ -143,9 +305,20 @@
       </section>
     </main>
   </div>
+  <div id="image-lightbox" class="image-lightbox" role="dialog" aria-modal="true" aria-label="Expanded figure" hidden>
+    <div class="image-lightbox-content">
+      <button id="image-lightbox-close" class="image-lightbox-close" type="button" aria-label="Close expanded image">&times;</button>
+      <img id="image-lightbox-img" src="" alt="">
+    </div>
+  </div>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const tabs = Array.from(document.querySelectorAll(".paper-view-button"));
+      const figureTabs = Array.from(document.querySelectorAll(".figure-view-button"));
+      const figureImages = Array.from(document.querySelectorAll(".figure-panel img"));
+      const lightbox = document.getElementById("image-lightbox");
+      const lightboxImage = document.getElementById("image-lightbox-img");
+      const lightboxClose = document.getElementById("image-lightbox-close");
 
       if (!tabs.length) {
         return;
@@ -166,6 +339,65 @@
 
       tabs.forEach((tab) => {
         tab.addEventListener("click", () => activateTab(tab));
+      });
+
+      const activateFigureTab = (targetTab) => {
+        figureTabs.forEach((tab) => {
+          const isActive = tab === targetTab;
+          const panelId = tab.getAttribute("aria-controls");
+          const panel = panelId ? document.getElementById(panelId) : null;
+
+          tab.setAttribute("aria-selected", isActive ? "true" : "false");
+          if (panel) {
+            panel.hidden = !isActive;
+          }
+        });
+      };
+
+      figureTabs.forEach((tab) => {
+        tab.addEventListener("click", () => activateFigureTab(tab));
+      });
+
+      const openLightbox = (sourceImage) => {
+        if (!lightbox || !lightboxImage) {
+          return;
+        }
+
+        lightboxImage.src = sourceImage.src;
+        lightboxImage.alt = sourceImage.alt;
+        lightbox.hidden = false;
+      };
+
+      const closeLightbox = () => {
+        if (!lightbox || !lightboxImage) {
+          return;
+        }
+
+        lightbox.hidden = true;
+        lightboxImage.src = "";
+        lightboxImage.alt = "";
+      };
+
+      figureImages.forEach((image) => {
+        image.addEventListener("click", () => openLightbox(image));
+      });
+
+      if (lightboxClose) {
+        lightboxClose.addEventListener("click", closeLightbox);
+      }
+
+      if (lightbox) {
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
+      }
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && lightbox && !lightbox.hidden) {
+          closeLightbox();
+        }
       });
     });
   </script>
