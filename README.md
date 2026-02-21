@@ -2,8 +2,8 @@
 
 > https://gabyrod7.github.io
 
-![GitHub stars](https://img.shields.io/github/stars/gabyrod7/gabyrod7.github.io) 
-![GitHub forks](https://img.shields.io/github/forks/gabyrod7/gabyrod7.github.io)
+<!-- ![GitHub stars](https://img.shields.io/github/stars/gabyrod7/gabyrod7.github.io)  -->
+<!-- ![GitHub forks](https://img.shields.io/github/forks/gabyrod7/gabyrod7.github.io) -->
 [![Website shields.io](https://img.shields.io/badge/website-up-yellow)](http://gabyrod7.github.io/)
 [![Ask Me Anything !](https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg)](https://www.linkedin.com/in/gabriel-rodriguez-linera-b0836a184/)
 <!-- [![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/gabyrod7/gabyrod7.github.io/commits/master) -->
