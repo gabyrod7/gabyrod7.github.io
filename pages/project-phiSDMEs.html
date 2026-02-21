@@ -6,6 +6,35 @@
   <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../assets/img/icon.png" />
   <title>Measurement of Spin-Density Matrix Elements</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    .paper-view-toggle {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0 1rem;
+      margin-bottom: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .paper-view-button {
+      border: 1px solid #bbb;
+      background: #fff;
+      color: #222;
+      padding: 0.45rem 0.75rem;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .paper-view-button[aria-selected="true"] {
+      background: #007acc;
+      border-color: #007acc;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .paper-view-panel {
+      padding: 0 1rem 0.8rem 1rem;
+    }
+  </style>
 </head>
 <body>
   <div class="wrap">
@@ -19,29 +48,42 @@
 
     <main class="right">
       <section class="project-content">
-        <h1>Measurement of Spin-Density Matrix Elements in φ(1020) → K<sub>S</sub>K<sub>L</sub></h1>
+        <h1>Published Paper: Spin-Density Matrix Elements in &phi;(1020) Photoproduction</h1>
 
-        <h2>Overview</h2>
-        <p>
-          As part of my PhD. dissertation I measured the Spin-Density Matrix Elements of &phi;(1020) using data collected 
-          by the GlueX Collaboration. This measurement was published in <a href="https://journals.aps.org/prc/abstract/10.1103/2tdc-5by6" target="_blank">Phys. Rev. C</a>.
-        </p>
+        <h2>Paper overview</h2>
+        <div class="paper-view-toggle" role="tablist" aria-label="Paper overview mode">
+          <button id="paper-tab-brief" class="paper-view-button" role="tab" aria-selected="true" aria-controls="paper-panel-brief" type="button">
+            Paper in 30 seconds
+          </button>
+          <button id="paper-tab-abstract" class="paper-view-button" role="tab" aria-selected="false" aria-controls="paper-panel-abstract" type="button">
+            Paper abstract
+          </button>
+        </div>
 
-        <h2>Paper abstract</h2>
+        <div id="paper-panel-brief" class="paper-view-panel" role="tabpanel" aria-labelledby="paper-tab-brief">
           <p>
-          We measure the Spin-Density Matrix Elements (SDMEs) for the photoproduction of
-          &phi;(1020) off of the proton in its decay to K<sub>S</sub><sup>0</sup> K<sub>L</sub><sup>0</sup>, using
-          105&nbsp;pb<sup>&minus;1</sup> of data collected with a linearly polarized photon beam
-          using the GlueX experiment. The SDMEs are measured in nine bins of the squared
-          four-momentum transfer <i>t</i> in the range &minus;<i>t</i> = 0.15&ndash;1.0&nbsp;GeV<sup>2</sup>,
-          providing the first measurement of their <i>t</i>-dependence for photon beam energies
-          E<sub>&gamma;</sub> = 8.2&ndash;8.8&nbsp;GeV. We confirm the dominance of Pomeron
-          exchange in this region, and put constraints on the contribution of other Regge
-          exchanges. We also find that helicity amplitudes where the helicity of the photon
-          and the &phi;(1020) differ by two units are negligible.
+            I led a data-intensive analysis to measure how &phi;(1020) particles are produced in high-energy photon-proton
+            collisions. Using a TB-scale experimental dataset and statistical modeling, I extracted high-precision observables
+            that describe the underlying production dynamics. The results were published in
+            <a href="https://journals.aps.org/prc/abstract/10.1103/2tdc-5by6" target="_blank" rel="noopener noreferrer">Physical Review C</a>
+            and provide new constraints on theoretical models.
           </p>
+        </div>
 
-        <h2>Paper highlights</h2>
+        <div id="paper-panel-abstract" class="paper-view-panel" role="tabpanel" aria-labelledby="paper-tab-abstract" hidden>
+          <p>
+            We measure the spin-density matrix elements (SDMEs) for the photoproduction of &phi;(1020) off of the proton
+            in its decay to K<sub>S</sub><sup>0</sup>K<sub>L</sub><sup>0</sup>, using 105&nbsp;pb<sup>&minus;1</sup>
+            of data collected with a linearly polarized photon beam using the GlueX experiment. The SDMEs are measured in
+            nine bins of the squared four-momentum transfer <i>t</i> in the range &minus;<i>t</i>=0.15-1.0&nbsp;GeV<sup>2</sup>,
+            providing the first measurement of their <i>t</i>-dependence for photon beam energies E<sub>&gamma;</sub>=8.2-8.8&nbsp;GeV.
+            We confirm the dominance of Pomeron exchange in this region, and put constraints on the contribution of other
+            Regge exchanges. We also find that helicity amplitudes where the helicity of the photon and the &phi;(1020)
+            differ by two units are negligible.
+          </p>
+        </div>
+
+        <h2>Highlights</h2>
           <ul>
             <li>Large event sample: ~6.5 × 10⁵ φ(1020) mesons were analysed, a dataset orders of magnitude larger than prior measurements in this beam-energy range.</li>
             <li>First measurement of the t-dependence of φ(1020) SDMEs in this photon-energy region (8.2-8.8 GeV).</li>
@@ -58,9 +100,74 @@
             <li>Linux environment: The HPC and clusters I worked on used CentOS and later AlmaLinux.</li>
             <li>Fitting framework: Use of the AmpTools framework to perform unbinned extended-maximum-likelihood fits of an angular-distribution model to extract SDMEs in each –t bin; formalism incorporates the angular dependence of vector-meson decay, beam polarization, and production kinematics.</li>
           </ul>
+
+
+        <!-- <h2>Why these results matter</h2>
+        <ul>
+          <li><strong>High-signal insight from noisy data:</strong> built workflows that recover subtle patterns from complex and imperfect measurements.</li>
+          <li><strong>Statistical rigor:</strong> quantified uncertainty and validated assumptions before drawing conclusions.</li>
+          <li><strong>Scalable execution:</strong> processed large datasets using distributed compute resources and automated batch workflows.</li>
+          <li><strong>Decision-grade outputs:</strong> produced interpretable metrics that separate competing hypotheses.</li>
+          <li><strong>Externally validated impact:</strong> the analysis passed peer review and was published in a leading journal.</li>
+        </ul>
+
+        <h2>My contributions</h2>
+        <ul>
+          <li>Designed and executed the end-to-end analysis strategy, from data quality checks to final statistical extraction.</li>
+          <li>Built and maintained analysis tooling in Python and C++ to automate processing, fitting, and validation steps.</li>
+          <li>Ran large-scale compute jobs and Monte Carlo studies to evaluate systematic effects and result stability.</li>
+          <li>Led interpretation of results and converted technical findings into publication-ready figures and narrative.</li>
+        </ul>
+
+        <h2>Technologies used (with industry analogies)</h2>
+        <ul>
+          <li><strong>HPC clusters + batch systems (swif2, HTCondor):</strong> comparable to distributed data processing and job orchestration in cloud data pipelines.</li>
+          <li><strong>Python and C++ tooling:</strong> similar to production workflows that combine rapid iteration (Python) with performance-critical components (C++).</li>
+          <li><strong>Monte Carlo simulation:</strong> analogous to simulation-based testing, stress testing, and uncertainty modeling in ML and forecasting systems.</li>
+          <li><strong>Maximum-likelihood fitting (AmpTools):</strong> analogous to model calibration and parameter estimation in applied statistics and ML.</li>
+          <li><strong>Linux-based compute environments:</strong> experience with CLI-driven workflows, remote systems, and reproducible execution across heterogeneous infrastructure.</li>
+        </ul>
+
+        <h2>Links</h2>
+        <ul>
+          <li><a href="https://journals.aps.org/prc/abstract/10.1103/2tdc-5by6" target="_blank" rel="noopener noreferrer">Journal publication (Phys. Rev. C 112, 025203)</a></li>
+          <li><a href="https://arxiv.org/abs/2504.01194" target="_blank" rel="noopener noreferrer">arXiv preprint</a></li>
+        </ul>
+
+        <h2>Technical details (for deeper readers)</h2>
+        <p>
+          This work measures nine spin-density matrix elements as a function of momentum transfer with a linearly polarized
+          photon beam at E<sub>&gamma;</sub> = 8.2-8.8 GeV. The results support dominant natural-parity exchange at low |t|
+          and place constraints on alternative exchange contributions and double-helicity-flip amplitudes.
+        </p> -->
       </section>
     </main>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabs = Array.from(document.querySelectorAll(".paper-view-button"));
+
+      if (!tabs.length) {
+        return;
+      }
+
+      const activateTab = (targetTab) => {
+        tabs.forEach((tab) => {
+          const isActive = tab === targetTab;
+          const panelId = tab.getAttribute("aria-controls");
+          const panel = panelId ? document.getElementById(panelId) : null;
+
+          tab.setAttribute("aria-selected", isActive ? "true" : "false");
+          if (panel) {
+            panel.hidden = !isActive;
+          }
+        });
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => activateTab(tab));
+      });
+    });
+  </script>
 </body>
 </html>
-
