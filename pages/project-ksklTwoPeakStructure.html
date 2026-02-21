@@ -71,6 +71,7 @@
       display: block;
       margin-bottom: 0;
       border-radius: 0;
+      cursor: zoom-in;
     }
 
     .paper-overview-right figcaption {
@@ -79,6 +80,50 @@
       padding: 0.6rem 0.8rem;
       color: #333;
       border-top: 1px solid #e5e5e5;
+    }
+
+    .image-lightbox {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(0, 0, 0, 0.82);
+      z-index: 1000;
+      padding: 1rem;
+    }
+
+    .image-lightbox[hidden] {
+      display: none;
+    }
+
+    .image-lightbox-content {
+      position: relative;
+      width: min(1200px, 100%);
+      max-height: 92vh;
+      display: grid;
+      place-items: center;
+    }
+
+    .image-lightbox img {
+      max-width: 100%;
+      max-height: 88vh;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      border-radius: 2px;
+    }
+
+    .image-lightbox-close {
+      position: absolute;
+      top: -0.2rem;
+      right: -0.2rem;
+      border: 1px solid #ddd;
+      background: #fff;
+      color: #111;
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.25rem;
+      line-height: 1;
+      cursor: pointer;
     }
 
     @media (max-width: 900px) {
@@ -122,11 +167,12 @@
 
             <div id="paper-panel-brief" class="paper-view-panel" role="tabpanel" aria-labelledby="paper-tab-brief">
               <p>
-                This working paper studies a two-peak structure above the &phi;(1020) in the K<sub>S</sub>K<sub>L</sub> mass spectrum
-                using the full GlueX-I coherent-peak dataset. We reconstruct K<sub>S</sub> from &pi;<sup>+</sup>&pi;<sup>&minus;</sup> decay,
-                treat K<sub>L</sub> as a missing particle, and model the spectrum with two resonance-inspired components on top of a smooth background.
-                The analysis consistently finds structures around ~1.5 GeV and ~1.75 GeV, with good fit quality in both
-                an interference and a no-interference model. The interpretation is still under active study, which is why this project is currently a working paper.
+                I analyzed a TB-scale physics dataset to understand an unusual pattern: two clear bumps in the data where
+                only one might be expected. To do this, I reconstructed particles from detector signals, compared multiple
+                statistical models, and checked that the result stayed consistent under many validation tests. The same
+                pattern appears reliably around two mass regions (about 1.5 and 1.75 GeV). However, the known particles 
+                that could produce these bumps do not align with these structures. This is still a working paper, and the 
+                exact physical interpretation is being refined.
               </p>
             </div>
 
@@ -173,9 +219,20 @@
     </main>
   </div>
 
+  <div id="image-lightbox" class="image-lightbox" role="dialog" aria-modal="true" aria-label="Expanded figure" hidden>
+    <div class="image-lightbox-content">
+      <button id="image-lightbox-close" class="image-lightbox-close" type="button" aria-label="Close expanded image">&times;</button>
+      <img id="image-lightbox-img" src="" alt="">
+    </div>
+  </div>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const tabs = Array.from(document.querySelectorAll(".paper-view-button"));
+      const overviewImage = document.querySelector(".paper-overview-right img");
+      const lightbox = document.getElementById("image-lightbox");
+      const lightboxImage = document.getElementById("image-lightbox-img");
+      const lightboxClose = document.getElementById("image-lightbox-close");
 
       if (!tabs.length) {
         return;
@@ -196,6 +253,48 @@
 
       tabs.forEach((tab) => {
         tab.addEventListener("click", () => activateTab(tab));
+      });
+
+      const openLightbox = (sourceImage) => {
+        if (!lightbox || !lightboxImage) {
+          return;
+        }
+
+        lightboxImage.src = sourceImage.src;
+        lightboxImage.alt = sourceImage.alt;
+        lightbox.hidden = false;
+      };
+
+      const closeLightbox = () => {
+        if (!lightbox || !lightboxImage) {
+          return;
+        }
+
+        lightbox.hidden = true;
+        lightboxImage.src = "";
+        lightboxImage.alt = "";
+      };
+
+      if (overviewImage) {
+        overviewImage.addEventListener("click", () => openLightbox(overviewImage));
+      }
+
+      if (lightboxClose) {
+        lightboxClose.addEventListener("click", closeLightbox);
+      }
+
+      if (lightbox) {
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
+      }
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && lightbox && !lightbox.hidden) {
+          closeLightbox();
+        }
       });
     });
   </script>
