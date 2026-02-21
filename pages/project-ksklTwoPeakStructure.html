@@ -4,28 +4,92 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../assets/img/icon.png" />
-  <title>Project Title – Your Name</title>
+  <title>Working Paper: KSKL Two-Peak Structure</title>
   <link rel="stylesheet" href="../style.css">
   <style>
-    body {
-      position: relative;
-      min-height: 100vh;
-      margin: 0;
-      font-family: Arial, sans-serif;
+    .status-chip {
+      display: inline-block;
+      margin: 0 1rem 0.8rem;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid #d39a00;
+      background: #fff7db;
+      color: #6f5200;
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
-    /* Watermark styling */
-    .watermark {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-30deg);
-      font-size: 4rem;
-      color: rgba(0, 0, 0, 0.1);
-      white-space: nowrap;
-      z-index: 9999;
-      pointer-events: none; /* allows clicking through it */
-      user-select: none;
+    .paper-view-toggle {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0 1rem;
+      margin-bottom: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .paper-view-button {
+      border: 1px solid #bbb;
+      background: #fff;
+      color: #222;
+      padding: 0.45rem 0.75rem;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .paper-view-button[aria-selected="true"] {
+      background: #007acc;
+      border-color: #007acc;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .paper-view-panel {
+      padding: 0 1rem 0.8rem 1rem;
+    }
+
+    .paper-overview-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 1fr);
+      gap: 1rem;
+      align-items: start;
+      padding-right: 1rem;
+    }
+
+    .paper-overview-right {
+      padding-top: 0.4rem;
+    }
+
+    .paper-overview-right figure {
+      margin: 0;
+      border: 1px solid #ddd;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .paper-overview-right img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    .paper-overview-right figcaption {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      padding: 0.6rem 0.8rem;
+      color: #333;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    @media (max-width: 900px) {
+      .paper-overview-grid {
+        grid-template-columns: 1fr;
+        padding-right: 0;
+      }
+
+      .paper-overview-right {
+        padding: 0 1rem;
+      }
     }
   </style>
 </head>
@@ -41,26 +105,99 @@
 
     <main class="right">
       <section class="project-content">
-        <h1>Observation of a two-peak structure in photoproduced K<sub>S</sub>K<sub>L</sub></h1>
+        <h1>Working Paper: Two-Peak Structure in K<sub>S</sub>K<sub>L</sub> Photoproduction</h1>
+        <div class="status-chip">Status: Working paper</div>
 
-        <h2>Overview</h2>
-        <p>
-          Briefly describe what this project does, its purpose, and any interesting challenges or results.
-          For example: “This tool visualizes meson photoproduction data from the GlueX experiment using Python and Plotly.”
-        </p>
+        <h2>Paper overview</h2>
+        <div class="paper-overview-grid">
+          <div class="paper-overview-left">
+            <div class="paper-view-toggle" role="tablist" aria-label="Paper overview mode">
+              <button id="paper-tab-brief" class="paper-view-button" role="tab" aria-selected="true" aria-controls="paper-panel-brief" type="button">
+                Paper in 30 seconds
+              </button>
+              <button id="paper-tab-abstract" class="paper-view-button" role="tab" aria-selected="false" aria-controls="paper-panel-abstract" type="button">
+                Paper abstract
+              </button>
+            </div>
 
-        <h2>Key Features</h2>
+            <div id="paper-panel-brief" class="paper-view-panel" role="tabpanel" aria-labelledby="paper-tab-brief">
+              <p>
+                This working paper studies a two-peak structure above the &phi;(1020) in the K<sub>S</sub>K<sub>L</sub> mass spectrum
+                using the full GlueX-I coherent-peak dataset. We reconstruct K<sub>S</sub> from &pi;<sup>+</sup>&pi;<sup>&minus;</sup> decay,
+                treat K<sub>L</sub> as a missing particle, and model the spectrum with two resonance-inspired components on top of a smooth background.
+                The analysis consistently finds structures around ~1.5 GeV and ~1.75 GeV, with good fit quality in both
+                an interference and a no-interference model. The interpretation is still under active study, which is why this project is currently a working paper.
+              </p>
+            </div>
+
+            <div id="paper-panel-abstract" class="paper-view-panel" role="tabpanel" aria-labelledby="paper-tab-abstract" hidden>
+              <p>
+                We study the two-peak structure above the &phi;(1020) in the K<sub>S</sub>K<sub>L</sub> spectrum using the full GlueX-I
+                coherent-peak dataset in the K<sub>S</sub>K<sub>L</sub>p final state over a broad mass range. K<sub>S</sub> is reconstructed via
+                its decay to &pi;<sup>+</sup>&pi;<sup>&minus;</sup>, while K<sub>L</sub> is treated as a missing particle. The mass spectrum is described
+                with two related models built from two resonance-like terms plus a smooth background: one model treats the terms
+                incoherently and the other allows interference. Both models describe the data well and identify structures near ~1.5 GeV and ~1.75 GeV.
+                Several known &rho;, &omega;, and &phi; states can contribute in this region, so a definitive state assignment remains under investigation.
+              </p>
+            </div>
+          </div>
+
+          <aside class="paper-overview-right" aria-label="Main figure preview">
+            <figure>
+              <img src="../assets/img/projects/twoPeakStructure/im_kskl_wInterference.svg" alt="KSKL mass spectrum fit with interference model">
+              <!-- <figcaption>
+                K<sub>S</sub>K<sub>L</sub> spectrum fit using the interference model.
+              </figcaption> -->
+            </figure>
+          </aside>
+        </div>
+
+        <h2>Highlights</h2>
         <ul>
-          <li>Feature 1 — short description.</li>
-          <li>Feature 2 — short description.</li>
-          <li>Feature 3 — short description.</li>
+          <li>Uses the full GlueX-I coherent-peak dataset for K<sub>S</sub>K<sub>L</sub> photoproduction in a broad mass window.</li>
+          <li>Finds a robust two-peak structure, with features around ~1.5 GeV and ~1.75 GeV.</li>
+          <li>Compares no-interference and interference fit models, both of which provide a good description of the spectrum.</li>
+          <li>Includes systematic studies over event selections, model assumptions, binning, and acceptance-correction choices.</li>
+          <li>Current interpretation is intentionally conservative while additional model-development work continues.</li>
         </ul>
 
         <h2>Technologies Used</h2>
-        <!-- <p>Python, NumPy, Matplotlib, Pandas, JavaScript, HTML, CSS</p> -->
+        <ul>
+          <li>High-energy data analysis on GlueX-I data with event reconstruction and selection workflows.</li>
+          <li>Signal extraction using sideband subtraction, accidental subtraction, and missing-mass techniques.</li>
+          <li>Resonance-spectrum modeling with relativistic Breit-Wigner-based parameterizations.</li>
+          <li>Acceptance correction and Monte Carlo validation against reconstructed observables.</li>
+          <li>Systematic-uncertainty estimation across fit settings and event-selection variations.</li>
+        </ul>
       </section>
-      <div class="watermark">Page under construction</div>
     </main>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabs = Array.from(document.querySelectorAll(".paper-view-button"));
+
+      if (!tabs.length) {
+        return;
+      }
+
+      const activateTab = (targetTab) => {
+        tabs.forEach((tab) => {
+          const isActive = tab === targetTab;
+          const panelId = tab.getAttribute("aria-controls");
+          const panel = panelId ? document.getElementById(panelId) : null;
+
+          tab.setAttribute("aria-selected", isActive ? "true" : "false");
+          if (panel) {
+            panel.hidden = !isActive;
+          }
+        });
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => activateTab(tab));
+      });
+    });
+  </script>
 </body>
 </html>
