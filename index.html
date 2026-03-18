@@ -22,11 +22,11 @@
             <img src="assets/img/photo.jpg" alt="Profile photo" class="profile-pic"/>
 
             <div class="nav">
-                <a class="button" href="#about">About</a>
-                <a class="button" href="#education">Education</a>
-                <!-- <a class="button" href="#experience">Experience</a> -->
+                <a class="button" href="#about">About Me</a>
                 <a class="button" href="#projects">Projects</a>
+                <a class="button" href="#education">Education</a>
                 <a class="button" href="#conferences">Conferences</a>
+
                 <a class="button" href="#publications">Publications</a>
                 <a class="button" href="#teaching">Teaching</a>
                 <a href="assets/resume/resume.pdf" class="button" target="_blank" rel="noopener noreferrer">Resume</a>
@@ -37,15 +37,10 @@
 
             <section id="about">
                 <h1>About Me</h1>
-                <p>
-                    I completed my Ph.D. in Physics in 2024, where I investigated fundamental particle interactions 
-                    using large-scale experimental data. My research involved analyzing data sets of several terabytes
-                    in size to study complex physics reactions, complemented by extensive Monte Carlo simulations to 
-                    model experimental inefficiencies. I developed strong expertise in data cleaning, statistical modeling,
-                    and extracting meaningful insights from noisy experimental data. The results of this work were
-                    published in the <a href="https://journals.aps.org/prc/abstract/10.1103/2tdc-5by6" target="_blank">Phys. Rev. C</a> journal, 
-                    contributing to a deeper understanding of the underlying processes in particle physics.
-                </p>
+                <p>I’m a software-oriented physicist with a Ph.D. in experimental particle physics, specialising in large-scale data analysis, statistical modelling, and scientific computing.</p>
+                <p>During my PhD at Florida State University, I worked with terabyte-scale datasets, developed reproducible analysis pipelines, and built high-performance tools in Python and C++ within distributed HPC environments. My work combined statistical inference, optimisation, and workflow automation to extract meaningful signals from complex data.</p>
+                <p>I’m now transitioning into industry roles in data science and research software engineering. I focus on building scalable, production-ready systems, from multithreaded data pipelines to retrieval-augmented generation (RAG) applications combining embeddings, search, and LLMs.</p>
+                <p>I’m particularly interested in roles at the intersection of data, machine learning, and scientific or healthcare applications, where rigorous analysis and real-world impact meet.</p>
 
                 <a href="https://github.com/gabyrod7" 
                 target="_blank" 
@@ -67,6 +62,72 @@
                 aria-label="GitHub profile">
                 <img src="assets/img/ORCID-icon.png" alt="orcid logo" class="github-icon">
                 </a>
+            </section>
+
+            <section id="projects">
+                <h1>Selected Projects</h1>
+
+                <div class="projects-grid">
+                    <a class="project-card" href="./pages/project-phiSDMEs.html">
+                    <figure>
+                        <img src="assets/img/gluex_logo.png" alt="Measurement of φ(1020) SDMEs" >
+                        <figcaption>
+                        <p>
+                            <b>Published paper</b><br/>
+                            Measurement of φ(1020) → K<sub>S</sub>K<sub>L</sub> Spin-Density Matrix Elements in photoproduction. This work was one of the main topics of my dissertation.
+                        </p>
+                        </figcaption>
+                    </figure>
+                    </a>
+
+                    <a class="project-card" href="./pages/project-ksklTwoPeakStructure.html">
+                    <figure>
+                        <img src="assets/img/gluex_logo.png" alt="Two peak structure in photoproduced neutral Kaon pairs" >
+                        <figcaption>
+                        <p>
+                            <b>Working paper</b><br/>
+                            Modeling of a two-peak structure in the K<sub>S</sub>K<sub>L</sub> spectrum in the 1.4–1.8 GeV region.
+                        </p>
+                        </figcaption>
+                    </figure>
+                    </a>
+
+                    <a class="project-card" href="https://github.com/gabyrod7/amptoolsManager" target="_blank" rel="noopener noreferrer">
+                    <figure>
+                        <img src="assets/img/github.png" alt="amptoolsManager" >
+                        <figcaption>
+                        <p>
+                            <b>amptoolsManager</b><br/>
+                            A multithreaded command-line Python tool for carrying out SDME and PWA measurements of GlueX data with AmpTools.
+                        </p>
+                        </figcaption>
+                    </figure>
+                    </a>
+
+                    <a class="project-card" href="https://github.com/gabyrod7/rag-search-engine" target="_blank" rel="noopener noreferrer">
+                    <figure>
+                        <img src="assets/img/github.png" alt="rag-search-engine" >
+                        <figcaption>
+                        <p>
+                            <b>rag-search-engine</b><br/>
+                            Retrieval-augmented search engine that blends vector embeddings with traditional keyword scoring for fast AI-assisted lookups.
+                        </p>
+                        </figcaption>
+                    </figure>
+                    </a>
+
+                    <a class="project-card" href="https://github.com/gabyrod7/learning_webdev" target="_blank" rel="noopener noreferrer">
+                    <figure>
+                        <img src="assets/img/github.png" alt="learning_webdev" >
+                        <figcaption>
+                        <p>
+                            <b>Web projects</b><br/>
+                            Collection of projects for learning web development.
+                        </p>
+                        </figcaption>
+                    </figure>
+                    </a>
+                </div>
             </section>
 
             <section id="education">
@@ -149,91 +210,6 @@
                     <br><a href="https://www.coursera.org/account/accomplishments/specialization/0YT30RQEM5L8">Certificate</a>
                 </div>
             </div>
-            </section>
-
-            <!-- <section id="experience">
-                <h1>Experience</h1>
-
-                <h2>GlueX Collaboration</h2>
-                <ul>
-                    <li>
-                        Analyzed the reaction γp → K<sub>S</sub><sup>0</sup>K<sub>S</sub><sup>0</sup>p.
-                        Carried out the data cleaning and physics analysis of this reaction. 
-                        I modeled the line shape and angular distributions of the K<sub>S</sub><sup>0</sup>K<sub>S</sub><sup>0</sup> system.
-                    </li>
-                    <li>
-                        Analyzed the reaction γp → K<sub>S</sub><sup>0</sup>K<sub>L</sub><sup>0</sup>p.
-                        Carried out the data cleaning and physics analysis of this reaction. 
-                        Measured the spin Spin-Density Matrix Elements and cross section of photoproduced φ(1020) → K<sub>S</sub>K<sub>L</sub>.
-
-                    </li>
-                </ul>
-            </section> -->
-
-            <section id="projects">
-                <h1>Projects</h1>
-
-                <div class="projects-grid">
-                    <a class="project-card" href="./pages/project-phiSDMEs.html">
-                    <figure>
-                        <img src="assets/img/gluex_logo.png" alt="Measurement of φ(1020) SDMEs" >
-                        <figcaption>
-                        <p>
-                            <b>Published paper</b><br/>
-                            Measurement of φ(1020) → K<sub>S</sub>K<sub>L</sub> Spin-Density Matrix Elements in photoproduction. This work was one of the main topics of my dissertation.
-                        </p>
-                        </figcaption>
-                    </figure>
-                    </a>
-
-                    <a class="project-card" href="./pages/project-ksklTwoPeakStructure.html">
-                    <figure>
-                        <img src="assets/img/gluex_logo.png" alt="Two peak structure in photoproduced neutral Kaon pairs" >
-                        <figcaption>
-                        <p>
-                            <b>Working paper</b><br/>
-                            Modeling of a two-peak structure in the K<sub>S</sub>K<sub>L</sub> spectrum in the 1.4–1.8 GeV region.
-                        </p>
-                        </figcaption>
-                    </figure>
-                    </a>
-
-                    <a class="project-card" href="https://github.com/gabyrod7/amptoolsManager" target="_blank" rel="noopener noreferrer">
-                    <figure>
-                        <img src="assets/img/github.png" alt="amptoolsManager" >
-                        <figcaption>
-                        <p>
-                            <b>amptoolsManager</b><br/>
-                            A multithreaded command-line Python tool for carrying out SDME and PWA measurements of GlueX data with AmpTools.
-                        </p>
-                        </figcaption>
-                    </figure>
-                    </a>
-
-                    <a class="project-card" href="https://github.com/gabyrod7/rag-search-engine" target="_blank" rel="noopener noreferrer">
-                    <figure>
-                        <img src="assets/img/github.png" alt="rag-search-engine" >
-                        <figcaption>
-                        <p>
-                            <b>rag-search-engine</b><br/>
-                            Retrieval-augmented search engine that blends vector embeddings with traditional keyword scoring for fast AI-assisted lookups.
-                        </p>
-                        </figcaption>
-                    </figure>
-                    </a>
-
-                    <a class="project-card" href="https://github.com/gabyrod7/learning_webdev" target="_blank" rel="noopener noreferrer">
-                    <figure>
-                        <img src="assets/img/github.png" alt="learning_webdev" >
-                        <figcaption>
-                        <p>
-                            <b>Web projects</b><br/>
-                            Collection of projects for learning web development.
-                        </p>
-                        </figcaption>
-                    </figure>
-                    </a>
-                </div>
             </section>
 
 
@@ -361,54 +337,8 @@
                     </div>
                 </div>
 
-                <div class="pub-item">
-                    <img src="assets/img/gluex_logo.png" alt="GlueX logo" class="pub-logo" >
-                    <div class="pub-text">
-                        <strong>Measurement of the J/ψ Photoproduction Cross Section over the Full Near-Threshold Kinematic Region</strong>
-                        <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.108.025201" target="_blank">Phys. Rev. C 108, 025201</a>
-                        &nbsp;·&nbsp;
-                        <a href="https://arxiv.org/abs/2304.03845" target="_blank">arXiv:2304.03845</a>
-                    </div>
-                </div>
-
-                <div class="pub-item">
-                    <img src="assets/img/gluex_logo.png" alt="GlueX logo" class="pub-logo" >
-                    <div class="pub-text">
-                        <strong>Measurement of Spin-Density Matrix Elements in ρ(770) Production with a Linearly Polarized Photon Beam at E<sub>γ</sub>=8.2–8.8 GeV</strong>
-                        <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.108.055204" target="_blank">Phys. Rev. C 108, 055204</a>
-                        &nbsp;·&nbsp;
-                        <a href="https://arxiv.org/abs/2305.09047" target="_blank">arXiv:2305.09047</a>
-                    </div>
-                </div>
-
-                <div class="pub-item">
-                    <img src="assets/img/gluex_logo.png" alt="GlueX logo" class="pub-logo" >
-                    <div class="pub-text">
-                        <strong>Measurement of Spin-Density Matrix Elements in Λ(1520) Photoproduction at 8.2 GeV to 8.8 GeV</strong>
-                        <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.105.035201" target="_blank">Phys. Rev. C 105, 035201</a>
-                        &nbsp;·&nbsp;
-                        <a href="https://arxiv.org/abs/2107.12314" target="_blank">arXiv:2107.12314</a>
-                    </div>
-                </div>
-
-                <div class="pub-item">
-                    <img src="assets/img/gluex_logo.png" alt="GlueX logo" class="pub-logo" >
-                    <div class="pub-text">
-                        <strong>Search for Photoproduction of Axion-Like Particles at GlueX</strong>
-                        <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.052007" target="_blank">Phys. Rev. D 105, 052007</a>
-                        &nbsp;·&nbsp;
-                        <a href="https://arxiv.org/abs/2109.13439" target="_blank">arXiv:2109.13439</a>
-                    </div>
-                </div>
-
-                <div class="pub-item">
-                    <img src="assets/img/gluex_logo.png" alt="GlueX logo" class="pub-logo" >
-                    <div class="pub-text">
-                        <strong>Measurement of Beam Asymmetry for π<sup>−</sup>Δ<sup>++</sup> Photoproduction on the Proton at E<sub>γ</sub>=8.5 GeV</strong>
-                        <a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.103.L022201" target="_blank">Phys. Rev. C 103, L022201</a>
-                        &nbsp;·&nbsp;
-                        <a href="https://arxiv.org/abs/2009.07326" target="_blank">arXiv:2009.07326</a>
-                    </div>
+                <div class="section-action">
+                    <a class="button inline-button" href="pages/publications.html">Full publication list</a>
                 </div>
             </section>
 
