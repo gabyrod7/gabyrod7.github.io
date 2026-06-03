@@ -41,3 +41,4 @@ Some portfolio pages I used as inspiration
 - <a href="https://github.com/guilyx/awesome-github-pages-portfolios?tab=readme-ov-file" target="_blank">Github page with multiple protfolio examples</a>
 - <a href="https://endtimes.dev/" target="_blank">endtimes.dev</a>
 - <a href="https://steveklabnik.com/" target="_blank">Steve Klabnik</a>
+- <a href="https://jvns.ca/" target="_blank">Julia Evans</a>

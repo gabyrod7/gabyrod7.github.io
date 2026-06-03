@@ -140,10 +140,27 @@ img {
 }
 
 .button:hover {
-  transform: translateY(-1px);
+  /* transform: translateY(-1px); */
   border-color: #b9c8d6;
   box-shadow: var(--shadow-soft);
   color: var(--text);
+  color: var(--accent-dark);
+
+}
+
+.pill-label {
+  display: inline-block;
+  width: auto;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 700;
+  font-size: inherit;
+  line-height: 1.2;
+  text-align: center;
+  cursor: default;
 }
 
 .button-primary {
@@ -155,6 +172,32 @@ img {
 .button-primary:hover {
   background: var(--accent-dark);
   border-color: var(--accent-dark);
+  color: #fff;
+}
+
+.right a:not(.project-card):not(.button) {
+  display: inline-block;
+  width: auto;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: inherit;
+  line-height: 1.2;
+  text-align: center;
+  transition:
+    transform 0.14s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.right a:not(.project-card):not(.button):hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  box-shadow: var(--shadow-soft);
   color: #fff;
 }
 
@@ -293,13 +336,15 @@ img {
   transition:
     transform 0.14s ease,
     box-shadow 0.18s ease,
-    border-color 0.18s ease;
+    border-color 0.18s ease,
+    filter 0.18s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-3px);
+  /* transform: translateY(-3px); */
   box-shadow: var(--shadow);
   border-color: #bfd1df;
+  filter: brightness(0.96);
 }
 
 .project-card figure {
