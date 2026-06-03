@@ -360,6 +360,24 @@ img {
   font-size: 1rem;
 }
 
+.edu-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.edu-heading strong {
+  margin-bottom: 0;
+}
+
+.edu-year {
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--text);
+}
+
 .pub-text em {
   color: var(--muted);
 }
@@ -478,6 +496,10 @@ li+li {
 
   .pub-logo {
     width: 64px;
+  }
+
+  .edu-heading {
+    flex-wrap: wrap;
   }
 
   .cta-row {
