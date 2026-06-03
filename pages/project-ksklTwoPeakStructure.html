@@ -1,468 +1,365 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="icon"
-      sizes="16x16 32x32 48x48"
-      type="image/png"
-      href="../assets/img/icon.png"
-    />
-    <title>KSKL Two-Peak Analysis | Gabriel Rodriguez Linera</title>
-    <meta
-      name="description"
-      content="Project page for Gabriel Rodriguez Linera's KSKL two-peak analysis, covering model comparison, validation, and large-scale scientific data analysis."
-    />
-    <link rel="stylesheet" href="../style.css" />
-    <style>
-      .status-chip {
-        display: inline-block;
-        margin: 0 1rem 0.8rem;
-        padding: 0.25rem 0.6rem;
-        border: 1px solid #d39a00;
-        background: #fff7db;
-        color: #6f5200;
-        font-size: 0.9rem;
-        font-weight: 600;
-      }
 
-      .paper-view-toggle {
-        display: flex;
-        gap: 0.5rem;
-        padding: 0 1rem;
-        margin-bottom: 0.8rem;
-        flex-wrap: wrap;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../assets/img/icon.png" />
+  <title>KSKL Two-Peak Analysis | Gabriel Rodriguez Linera</title>
+  <meta name="description" content="Project page for Gabriel Rodriguez Linera's KSKL two-peak analysis, covering model comparison, validation, and large-scale scientific data analysis." />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .status-chip {
+      display: inline-block;
+      margin: 0.5rem 0 0.5rem 0;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid #d39a00;
+      background: #fff7db;
+      color: #6f5200;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
 
-      .paper-view-button {
-        border: 1px solid #bbb;
-        background: #fff;
-        color: #222;
-        padding: 0.45rem 0.75rem;
-        cursor: pointer;
-        font: inherit;
-      }
+    .paper-view-toggle {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0 1rem;
+      margin-bottom: 0.8rem;
+      flex-wrap: wrap;
+    }
 
-      .paper-view-button[aria-selected="true"] {
-        background: #007acc;
-        border-color: #007acc;
-        color: #fff;
-        font-weight: 600;
-      }
+    .paper-view-button {
+      border: 1px solid #bbb;
+      background: #fff;
+      color: #222;
+      padding: 0.45rem 0.75rem;
+      cursor: pointer;
+      font: inherit;
+    }
 
-      .paper-view-panel {
-        padding: 0 1rem 0.8rem 1rem;
-      }
+    .paper-view-button[aria-selected="true"] {
+      background: #007acc;
+      border-color: #007acc;
+      color: #fff;
+      font-weight: 600;
+    }
 
+    .paper-view-panel {
+      padding: 0 1rem 0.8rem 1rem;
+    }
+
+    .paper-overview-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 1fr);
+      gap: 1rem;
+      align-items: start;
+      padding-right: 1rem;
+    }
+
+    .paper-overview-right {
+      padding-top: 0.4rem;
+    }
+
+    .paper-overview-right figure {
+      margin: 0;
+      border: 1px solid #ddd;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .paper-overview-right img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 0;
+      border-radius: 0;
+      cursor: zoom-in;
+    }
+
+    .paper-overview-right figcaption {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      padding: 0.6rem 0.8rem;
+      color: #333;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .image-lightbox {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(0, 0, 0, 0.82);
+      z-index: 1000;
+      padding: 1rem;
+    }
+
+    .image-lightbox[hidden] {
+      display: none;
+    }
+
+    .image-lightbox-content {
+      position: relative;
+      width: min(1200px, 100%);
+      max-height: 92vh;
+      display: grid;
+      place-items: center;
+    }
+
+    .image-lightbox img {
+      max-width: 100%;
+      max-height: 88vh;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      border-radius: 2px;
+    }
+
+    .image-lightbox-close {
+      position: absolute;
+      top: -0.2rem;
+      right: -0.2rem;
+      border: 1px solid #ddd;
+      background: #fff;
+      color: #111;
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.25rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
       .paper-overview-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1.2fr) minmax(280px, 1fr);
-        gap: 1rem;
-        align-items: start;
-        padding-right: 1rem;
+        grid-template-columns: 1fr;
+        padding-right: 0;
       }
 
       .paper-overview-right {
-        padding-top: 0.4rem;
+        padding: 0 1rem;
       }
+    }
+  </style>
+</head>
 
-      .paper-overview-right figure {
-        margin: 0;
-        border: 1px solid #ddd;
-        background: #fff;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      }
-
-      .paper-overview-right img {
-        width: 100%;
-        height: auto;
-        display: block;
-        margin-bottom: 0;
-        border-radius: 0;
-        cursor: zoom-in;
-      }
-
-      .paper-overview-right figcaption {
-        font-size: 0.9rem;
-        line-height: 1.4;
-        padding: 0.6rem 0.8rem;
-        color: #333;
-        border-top: 1px solid #e5e5e5;
-      }
-
-      .image-lightbox {
-        position: fixed;
-        inset: 0;
-        display: grid;
-        place-items: center;
-        background: rgba(0, 0, 0, 0.82);
-        z-index: 1000;
-        padding: 1rem;
-      }
-
-      .image-lightbox[hidden] {
-        display: none;
-      }
-
-      .image-lightbox-content {
-        position: relative;
-        width: min(1200px, 100%);
-        max-height: 92vh;
-        display: grid;
-        place-items: center;
-      }
-
-      .image-lightbox img {
-        max-width: 100%;
-        max-height: 88vh;
-        background: #fff;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-        border-radius: 2px;
-      }
-
-      .image-lightbox-close {
-        position: absolute;
-        top: -0.2rem;
-        right: -0.2rem;
-        border: 1px solid #ddd;
-        background: #fff;
-        color: #111;
-        width: 2rem;
-        height: 2rem;
-        font-size: 1.25rem;
-        line-height: 1;
-        cursor: pointer;
-      }
-
-      @media (max-width: 900px) {
-        .paper-overview-grid {
-          grid-template-columns: 1fr;
-          padding-right: 0;
-        }
-
-        .paper-overview-right {
-          padding: 0 1rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrap">
-      <aside class="left">
-        <div class="sidebar-inner">
-          <img
-            src="../assets/img/photo.jpg"
-            alt="Portrait of Gabriel Rodriguez Linera"
-            class="profile-pic"
-          />
-          <div class="sidebar-copy">
-            <p class="eyebrow">Project detail</p>
-            <h1 class="sidebar-title">
-              K<sub>S</sub>K<sub>L</sub> two-peak analysis
-            </h1>
-            <p class="sidebar-summary">
-              A working paper centered on modeling, validation, and careful
-              interpretation of an unusual structure in GlueX data.
-            </p>
-          </div>
-          <nav class="nav" aria-label="Project page navigation">
-            <a href="../index.html" class="button">← Back to Portfolio</a>
-            <a href="../index.html#projects" class="button"
-              >← Back to Projects</a
-            >
-          </nav>
+<body>
+  <div class="wrap">
+    <aside class="left">
+      <div class="sidebar-inner">
+        <img src="../assets/img/photo.jpg" alt="Portrait of Gabriel Rodriguez Linera" class="profile-pic" />
+        <div class="sidebar-copy">
+          <p class="eyebrow">Gabriel Rodriguez Linera</p>
         </div>
-      </aside>
+        <br>
+        <nav class="nav" aria-label="Project page navigation">
+          <a href="../index.html" class="button">← Back to Portfolio</a>
+          <a href="../index.html#projects" class="button">← Back to Projects</a>
+        </nav>
+      </div>
+    </aside>
 
-      <main class="right">
-        <section class="project-content">
-          <div class="page-intro">
-            <p class="section-kicker">Working paper</p>
-            <h2>
-              Two-Peak Structure in K<sub>S</sub>K<sub>L</sub> Photoproduction
-            </h2>
-            <p>
-              This project highlights model comparison, signal validation, and
-              conservative interpretation when the data show a robust but
-              not-yet-fully-explained structure.
-            </p>
-          </div>
+    <main class="right">
+      <section class="project-content">
+        <div class="page-intro">
+          <p class="section-kicker">Working paper</p>
+          <h2>
+            Two-Peak Structure in K<sub>S</sub>K<sub>L</sub> Photoproduction
+          </h2>
+        </div>
 
-          <div class="meta-grid">
-            <article class="meta-card">
-              <h3>Focus</h3>
+        <a href="https://repository.lib.fsu.edu/islandora/object/fsu:954602" target="_blank" rel="noopener noreferrer">Dissertation</a>
+        <br>
+        <div class="status-chip">Availability: This paper is currently in preparation and is not yet publicly available. An earlier version of this analysis appears in Chapter 7 of my dissertation.</div>
+        <div class="status-chip">May 2, 2026: First round of internal review started.</div>
+
+        <h2>Paper overview</h2>
+        <div class="paper-overview-grid">
+          <div class="paper-overview-left">
+            <div class="paper-view-toggle" role="tablist" aria-label="Paper overview mode">
+              <button id="paper-tab-brief" class="paper-view-button" role="tab" aria-selected="true" aria-controls="paper-panel-brief" type="button">
+                Paper in 30 seconds
+              </button>
+              <button id="paper-tab-abstract" class="paper-view-button" role="tab" aria-selected="false" aria-controls="paper-panel-abstract" type="button">
+                Paper abstract
+              </button>
+            </div>
+
+            <div id="paper-panel-brief" class="paper-view-panel" role="tabpanel" aria-labelledby="paper-tab-brief">
               <p>
-                Characterizing a persistent two-peak structure in the
-                K<sub>S</sub>K<sub>L</sub> mass spectrum.
+                I analyzed a TB-scale physics dataset to understand an unusual
+                pattern: two clear bumps in the data where only one might be
+                expected. To do this, I reconstructed particles from detector
+                signals, compared multiple statistical models, and checked
+                that the result stayed consistent under many validation tests.
+                The same pattern appears reliably around two mass regions
+                (about 1.5 and 1.75 GeV). However, the known particles that
+                could produce these bumps do not align with these structures.
+                This is still a working paper, and the exact physical
+                interpretation is being refined.
               </p>
-            </article>
-            <article class="meta-card">
-              <h3>Methods</h3>
+            </div>
+
+            <div id="paper-panel-abstract" class="paper-view-panel" role="tabpanel" aria-labelledby="paper-tab-abstract" hidden>
               <p>
-                Event reconstruction, fit-model comparison, systematic studies,
-                and Monte Carlo validation.
-              </p>
-            </article>
-            <article class="meta-card">
-              <h3>Status</h3>
-              <p>
-                Working paper in preparation, with an earlier version documented
-                in my dissertation.
-              </p>
-            </article>
-          </div>
-
-          <div class="status-chip">Status: Working paper</div>
-          <p>
-            Availability: This paper is currently in preparation and is not yet
-            publicly available. An earlier version appears in my
-            <a
-              href="https://repository.lib.fsu.edu/islandora/object/fsu:954602"
-              target="_blank"
-              rel="noopener noreferrer"
-              >dissertation</a
-            >
-            (primarily discussed in Chapter 7).
-          </p>
-
-          <h2>Paper overview</h2>
-          <div class="paper-overview-grid">
-            <div class="paper-overview-left">
-              <div
-                class="paper-view-toggle"
-                role="tablist"
-                aria-label="Paper overview mode"
-              >
-                <button
-                  id="paper-tab-brief"
-                  class="paper-view-button"
-                  role="tab"
-                  aria-selected="true"
-                  aria-controls="paper-panel-brief"
-                  type="button"
-                >
-                  Paper in 30 seconds
-                </button>
-                <button
-                  id="paper-tab-abstract"
-                  class="paper-view-button"
-                  role="tab"
-                  aria-selected="false"
-                  aria-controls="paper-panel-abstract"
-                  type="button"
-                >
-                  Paper abstract
-                </button>
-              </div>
-
-              <div
-                id="paper-panel-brief"
-                class="paper-view-panel"
-                role="tabpanel"
-                aria-labelledby="paper-tab-brief"
-              >
-                <p>
-                  I analyzed a TB-scale physics dataset to understand an unusual
-                  pattern: two clear bumps in the data where only one might be
-                  expected. To do this, I reconstructed particles from detector
-                  signals, compared multiple statistical models, and checked
-                  that the result stayed consistent under many validation tests.
-                  The same pattern appears reliably around two mass regions
-                  (about 1.5 and 1.75 GeV). However, the known particles that
-                  could produce these bumps do not align with these structures.
-                  This is still a working paper, and the exact physical
-                  interpretation is being refined.
-                </p>
-              </div>
-
-              <div
-                id="paper-panel-abstract"
-                class="paper-view-panel"
-                role="tabpanel"
-                aria-labelledby="paper-tab-abstract"
-                hidden
-              >
-                <p>
-                  This working paper is currently in preparation and is not yet
-                  publicly available.
-                  <!-- We study the two-peak structure above the &phi;(1020) in the K<sub>S</sub>K<sub>L</sub> spectrum using the full GlueX-I
+                This working paper is currently in preparation and is not yet
+                publicly available.
+                <!-- We study the two-peak structure above the &phi;(1020) in the K<sub>S</sub>K<sub>L</sub> spectrum using the full GlueX-I
                 coherent-peak dataset in the K<sub>S</sub>K<sub>L</sub>p final state over a broad mass range. K<sub>S</sub> is reconstructed via
                 its decay to &pi;<sup>+</sup>&pi;<sup>&minus;</sup>, while K<sub>L</sub> is treated as a missing particle. The mass spectrum is described
                 with two related models built from two resonance-like terms plus a smooth background: one model treats the terms
                 incoherently and the other allows interference. Both models describe the data well and identify structures near ~1.5 GeV and ~1.75 GeV.
                 Several known &rho;, &omega;, and &phi; states can contribute in this region, so a definitive state assignment remains under investigation. -->
-                </p>
-              </div>
+              </p>
             </div>
-
-            <aside
-              class="paper-overview-right"
-              aria-label="Main figure preview"
-            >
-              <figure>
-                <img
-                  src="../assets/img/projects/twoPeakStructure/im_kskl_wInterference.svg"
-                  alt="KSKL mass spectrum fit with interference model"
-                />
-                <!-- <figcaption>
-                K<sub>S</sub>K<sub>L</sub> spectrum fit using the interference model.
-              </figcaption> -->
-              </figure>
-            </aside>
           </div>
 
-          <h2>Highlights</h2>
-          <ul>
-            <li>
-              Uses the full GlueX-I coherent-peak dataset for K<sub>S</sub>K<sub
-                >L</sub
-              >
-              photoproduction in a broad mass window.
-            </li>
-            <li>
-              Finds a robust two-peak structure, with features around ~1.5 GeV
-              and ~1.75 GeV.
-            </li>
-            <li>
-              Compares no-interference and interference fit models, both of
-              which provide a good description of the spectrum.
-            </li>
-            <li>
-              Includes systematic studies over event selections, model
-              assumptions, binning, and acceptance-correction choices.
-            </li>
-            <li>
-              Current interpretation is intentionally conservative while
-              additional model-development work continues.
-            </li>
-          </ul>
+          <aside class="paper-overview-right" aria-label="Main figure preview">
+            <figure>
+              <img src="../assets/img/projects/twoPeakStructure/im_kskl_wInterference.svg" alt="KSKL mass spectrum fit with interference model" />
+              <!-- <figcaption>
+                K<sub>S</sub>K<sub>L</sub> spectrum fit using the interference model.
+              </figcaption> -->
+            </figure>
+          </aside>
+        </div>
 
-          <h2>Technologies Used</h2>
-          <ul>
-            <li>
-              High-energy data analysis on GlueX-I data with event
-              reconstruction and selection workflows.
-            </li>
-            <li>
-              Signal extraction using sideband subtraction, accidental
-              subtraction, and missing-mass techniques.
-            </li>
-            <li>
-              Resonance-spectrum modeling with relativistic Breit-Wigner-based
-              parameterizations.
-            </li>
-            <li>
-              Acceptance correction and Monte Carlo validation against
-              reconstructed observables.
-            </li>
-            <li>
-              Systematic-uncertainty estimation across fit settings and
-              event-selection variations.
-            </li>
-          </ul>
-        </section>
-      </main>
+        <h2>Highlights</h2>
+        <ul>
+          <li>
+            Uses the full GlueX-I coherent-peak dataset for K<sub>S</sub>K<sub>L</sub>
+            photoproduction in a broad mass window.
+          </li>
+          <li>
+            Finds a robust two-peak structure, with features around ~1.5 GeV
+            and ~1.75 GeV.
+          </li>
+          <li>
+            Compares no-interference and interference fit models, both of
+            which provide a good description of the spectrum.
+          </li>
+          <li>
+            Includes systematic studies over event selections, model
+            assumptions, binning, and acceptance-correction choices.
+          </li>
+          <li>
+            Current interpretation is intentionally conservative while
+            additional model-development work continues.
+          </li>
+        </ul>
+
+        <h2>Technologies Used</h2>
+        <ul>
+          <li>
+            High-energy data analysis on GlueX-I data with event
+            reconstruction and selection workflows.
+          </li>
+          <li>
+            Signal extraction using sideband subtraction, accidental
+            subtraction, and missing-mass techniques.
+          </li>
+          <li>
+            Resonance-spectrum modeling with relativistic Breit-Wigner-based
+            parameterizations.
+          </li>
+          <li>
+            Acceptance correction and Monte Carlo validation against
+            reconstructed observables.
+          </li>
+          <li>
+            Systematic-uncertainty estimation across fit settings and
+            event-selection variations.
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <div id="image-lightbox" class="image-lightbox" role="dialog" aria-modal="true" aria-label="Expanded figure" hidden>
+    <div class="image-lightbox-content">
+      <button id="image-lightbox-close" class="image-lightbox-close" type="button" aria-label="Close expanded image">
+        &times;
+      </button>
+      <img id="image-lightbox-img" src="" alt="" />
     </div>
+  </div>
 
-    <div
-      id="image-lightbox"
-      class="image-lightbox"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Expanded figure"
-      hidden
-    >
-      <div class="image-lightbox-content">
-        <button
-          id="image-lightbox-close"
-          class="image-lightbox-close"
-          type="button"
-          aria-label="Close expanded image"
-        >
-          &times;
-        </button>
-        <img id="image-lightbox-img" src="" alt="" />
-      </div>
-    </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabs = Array.from(
+        document.querySelectorAll(".paper-view-button"),
+      );
+      const overviewImage = document.querySelector(
+        ".paper-overview-right img",
+      );
+      const lightbox = document.getElementById("image-lightbox");
+      const lightboxImage = document.getElementById("image-lightbox-img");
+      const lightboxClose = document.getElementById("image-lightbox-close");
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const tabs = Array.from(
-          document.querySelectorAll(".paper-view-button"),
-        );
-        const overviewImage = document.querySelector(
-          ".paper-overview-right img",
-        );
-        const lightbox = document.getElementById("image-lightbox");
-        const lightboxImage = document.getElementById("image-lightbox-img");
-        const lightboxClose = document.getElementById("image-lightbox-close");
+      if (!tabs.length) {
+        return;
+      }
 
-        if (!tabs.length) {
+      const activateTab = (targetTab) => {
+        tabs.forEach((tab) => {
+          const isActive = tab === targetTab;
+          const panelId = tab.getAttribute("aria-controls");
+          const panel = panelId ? document.getElementById(panelId) : null;
+
+          tab.setAttribute("aria-selected", isActive ? "true" : "false");
+          if (panel) {
+            panel.hidden = !isActive;
+          }
+        });
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => activateTab(tab));
+      });
+
+      const openLightbox = (sourceImage) => {
+        if (!lightbox || !lightboxImage) {
           return;
         }
 
-        const activateTab = (targetTab) => {
-          tabs.forEach((tab) => {
-            const isActive = tab === targetTab;
-            const panelId = tab.getAttribute("aria-controls");
-            const panel = panelId ? document.getElementById(panelId) : null;
+        lightboxImage.src = sourceImage.src;
+        lightboxImage.alt = sourceImage.alt;
+        lightbox.hidden = false;
+      };
 
-            tab.setAttribute("aria-selected", isActive ? "true" : "false");
-            if (panel) {
-              panel.hidden = !isActive;
-            }
-          });
-        };
-
-        tabs.forEach((tab) => {
-          tab.addEventListener("click", () => activateTab(tab));
-        });
-
-        const openLightbox = (sourceImage) => {
-          if (!lightbox || !lightboxImage) {
-            return;
-          }
-
-          lightboxImage.src = sourceImage.src;
-          lightboxImage.alt = sourceImage.alt;
-          lightbox.hidden = false;
-        };
-
-        const closeLightbox = () => {
-          if (!lightbox || !lightboxImage) {
-            return;
-          }
-
-          lightbox.hidden = true;
-          lightboxImage.src = "";
-          lightboxImage.alt = "";
-        };
-
-        if (overviewImage) {
-          overviewImage.addEventListener("click", () =>
-            openLightbox(overviewImage),
-          );
+      const closeLightbox = () => {
+        if (!lightbox || !lightboxImage) {
+          return;
         }
 
-        if (lightboxClose) {
-          lightboxClose.addEventListener("click", closeLightbox);
-        }
+        lightbox.hidden = true;
+        lightboxImage.src = "";
+        lightboxImage.alt = "";
+      };
 
-        if (lightbox) {
-          lightbox.addEventListener("click", (event) => {
-            if (event.target === lightbox) {
-              closeLightbox();
-            }
-          });
-        }
+      if (overviewImage) {
+        overviewImage.addEventListener("click", () =>
+          openLightbox(overviewImage),
+        );
+      }
 
-        document.addEventListener("keydown", (event) => {
-          if (event.key === "Escape" && lightbox && !lightbox.hidden) {
+      if (lightboxClose) {
+        lightboxClose.addEventListener("click", closeLightbox);
+      }
+
+      if (lightbox) {
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) {
             closeLightbox();
           }
         });
+      }
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && lightbox && !lightbox.hidden) {
+          closeLightbox();
+        }
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>
