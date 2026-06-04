@@ -10,7 +10,7 @@
 <!-- [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) -->
 
 ## About
-This is a protfolio page with a two column layout implements with HTML/CSS/JavaScript.
+This repository contains my personal portfolio website, built with HTML, CSS, and vanilla JavaScript. It showcases my projects, publications, skills, and professional experience.
 
 ## Website Preview
 
@@ -22,7 +22,7 @@ This is a protfolio page with a two column layout implements with HTML/CSS/JavaS
 
 ## Useful Resources
 - A favicon is a file containing one or more small icons associated with a particular website or web page, I generated the favicon for this webpage using  <a href="https://favicon.io/">favicon.io</a>.
-- Two useful websites for getting icons are (simpleicons.org)[https://simpleicons.org/] and (fonts.google.com)[https://fonts.google.com/icons]
+- Useful websites for getting icons are [fontawesome.com](https://fontawesome.com/), [simpleicons.org](https://simpleicons.org/) and [fonts.google.com](https://fonts.google.com/icons)
 
 ## Inspiration
 
